@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkeis8soqxpeh"]
+
+[ext_resource type="Texture2D" uid="uid://dg7qx1kvejhb3" path="res://icon.svg" id="1_rj3um"]
+[ext_resource type="Script" path="res://Scripts/Mr Flap.gd" id="1_t8byd"]
+[ext_resource type="PackedScene" uid="uid://c6e6ugg5w3y07" path="res://Prefabs/pipes.tscn" id="3_ml82s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwnke"]
+size = Vector2(118, 118)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e5h4"]
+size = Vector2(768, 128)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.605, 0.605)
+
+[node name="Mr Flap" type="RigidBody2D" parent="." groups=["Player"]]
+position = Vector2(-592, -112)
+gravity_scale = 2.0
+max_contacts_reported = 4
+contact_monitor = true
+script = ExtResource("1_t8byd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Mr Flap"]
+texture = ExtResource("1_rj3um")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mr Flap"]
+shape = SubResource("RectangleShape2D_fwnke")
+
+[node name="Ground" type="StaticBody2D" parent="." groups=["Obstacle"]]
+position = Vector2(0, 608)
+scale = Vector2(2.64049, 2.28645)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+scale = Vector2(6, 1)
+texture = ExtResource("1_rj3um")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_8e5h4")
+
+[node name="Pipes" parent="." instance=ExtResource("3_ml82s")]
+
+[connection signal="body_entered" from="Mr Flap" to="Mr Flap" method="_on_body_entered"]
