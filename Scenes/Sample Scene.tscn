@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkeis8soqxpeh"]
+[gd_scene load_steps=8 format=3 uid="uid://dkeis8soqxpeh"]
 
 [ext_resource type="Texture2D" uid="uid://dg7qx1kvejhb3" path="res://icon.svg" id="1_rj3um"]
 [ext_resource type="Script" path="res://Scripts/Mr Flap.gd" id="1_t8byd"]
 [ext_resource type="PackedScene" uid="uid://c6e6ugg5w3y07" path="res://Prefabs/pipes.tscn" id="3_ml82s"]
+[ext_resource type="Script" path="res://Scripts/Game State Manager.gd" id="4_qaupv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fwnke"]
 size = Vector2(118, 118)
@@ -10,17 +11,23 @@ size = Vector2(118, 118)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8e5h4"]
 size = Vector2(768, 128)
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_akevw"]
+font_size = 50
+
+[node name="Node 2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.605, 0.605)
 
 [node name="Mr Flap" type="RigidBody2D" parent="." groups=["Player"]]
 position = Vector2(-592, -112)
+collision_layer = 5
+collision_mask = 5
 gravity_scale = 2.0
 max_contacts_reported = 4
 contact_monitor = true
 script = ExtResource("1_t8byd")
+jump_strength = 700.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Mr Flap"]
 texture = ExtResource("1_rj3um")
@@ -40,5 +47,35 @@ texture = ExtResource("1_rj3um")
 shape = SubResource("RectangleShape2D_8e5h4")
 
 [node name="Pipes" parent="." instance=ExtResource("3_ml82s")]
+
+[node name="Game State Manager" type="Node2D" parent="."]
+script = ExtResource("4_qaupv")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -952.0
+offset_top = -536.0
+offset_right = 952.0
+offset_bottom = 488.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Score" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.0
+offset_right = 67.0
+offset_bottom = 72.0
+grow_horizontal = 2
+text = "Score"
+label_settings = SubResource("LabelSettings_akevw")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="Mr Flap" to="Mr Flap" method="_on_body_entered"]

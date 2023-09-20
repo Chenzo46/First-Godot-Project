@@ -1,0 +1,17 @@
+C:\Users\delig\OneDrive\Desktop\Godot Projects\First-Godot-Project\.godot\mono\temp\obj\Debug\First Godot Test.csproj.AssemblyReference.cache
+C:\Users\delig\OneDrive\Desktop\Godot Projects\First-Godot-Project\.godot\mono\temp\obj\Debug\First Godot Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\delig\OneDrive\Desktop\Godot Projects\First-Godot-Project\.godot\mono\temp\obj\Debug\First Godot Test.AssemblyInfoInputs.cache
+C:\Users\delig\OneDrive\Desktop\Godot Projects\First-Godot-Project\.godot\mono\temp\obj\Debug\First Godot Test.AssemblyInfo.cs
+C:\Users\delig\OneDrive\Desktop\Godot Projects\First-Godot-Project\.godot\mono\temp\obj\Debug\First Godot Test.csproj.CoreCompileInputs.cache
+C:\Users\delig\OneDrive\Desktop\Godot Projects\First-Godot-Project\.godot\mono\temp\bin\Debug\First Godot Test.deps.json
+C:\Users\delig\OneDrive\Desktop\Godot Projects\First-Godot-Project\.godot\mono\temp\bin\Debug\First Godot Test.runtimeconfig.json
+C:\Users\delig\OneDrive\Desktop\Godot Projects\First-Godot-Project\.godot\mono\temp\bin\Debug\First Godot Test.dll
+C:\Users\delig\OneDrive\Desktop\Godot Projects\First-Godot-Project\.godot\mono\temp\bin\Debug\First Godot Test.pdb
+C:\Users\delig\OneDrive\Desktop\Godot Projects\First-Godot-Project\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\delig\OneDrive\Desktop\Godot Projects\First-Godot-Project\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\delig\OneDrive\Desktop\Godot Projects\First-Godot-Project\.godot\mono\temp\obj\Debug\First Godot Test.csproj.CopyComplete
+C:\Users\delig\OneDrive\Desktop\Godot Projects\First-Godot-Project\.godot\mono\temp\obj\Debug\First Godot Test.dll
+C:\Users\delig\OneDrive\Desktop\Godot Projects\First-Godot-Project\.godot\mono\temp\obj\Debug\refint\First Godot Test.dll
+C:\Users\delig\OneDrive\Desktop\Godot Projects\First-Godot-Project\.godot\mono\temp\obj\Debug\First Godot Test.pdb
+C:\Users\delig\OneDrive\Desktop\Godot Projects\First-Godot-Project\.godot\mono\temp\obj\Debug\First Godot Test.genruntimeconfig.cache
+C:\Users\delig\OneDrive\Desktop\Godot Projects\First-Godot-Project\.godot\mono\temp\obj\Debug\ref\First Godot Test.dll

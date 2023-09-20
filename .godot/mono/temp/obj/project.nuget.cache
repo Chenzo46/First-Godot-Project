@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "6hJxY4WbkHsHvIMz3U12RCre1MeObqMoTjc8yRFZENGw2YR9BKns7BaSb9FTluLR+C8xoy5unYOx0GnFsYuGLQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\delig\\OneDrive\\Desktop\\Godot Projects\\First-Godot-Project\\First Godot Test.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\delig\\.nuget\\packages\\godot.sourcegenerators\\4.1.1\\godot.sourcegenerators.4.1.1.nupkg.sha512",
+    "C:\\Users\\delig\\.nuget\\packages\\godotsharp\\4.1.1\\godotsharp.4.1.1.nupkg.sha512",
+    "C:\\Users\\delig\\.nuget\\packages\\godotsharpeditor\\4.1.1\\godotsharpeditor.4.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}

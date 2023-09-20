@@ -1,2 +1,6 @@
 res://Scenes/Sample Scene.tscn
 res://Scripts/Icon.gd
+res://Prefabs/pipes.tscn
+res://Scripts/pipes.gd
+res://Scripts/Mr Flap.gd
+res://Scripts/Game State Manager.gd
