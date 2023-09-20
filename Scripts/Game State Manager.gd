@@ -9,7 +9,7 @@ func _ready():
 func _restart_game():
 	get_tree().reload_current_scene()
 	score = 0
-	
+
 func _inc_score():
 	score_label = _get_score_label()
 	score += 1

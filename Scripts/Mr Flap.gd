@@ -11,5 +11,4 @@ func _on_body_entered(body):
 		end_player()
 
 func end_player():
-	print("Game Over")
 	GameStateManager._restart_game()

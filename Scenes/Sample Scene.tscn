@@ -1,57 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkeis8soqxpeh"]
+[gd_scene load_steps=10 format=3 uid="uid://dkeis8soqxpeh"]
 
 [ext_resource type="Texture2D" uid="uid://dg7qx1kvejhb3" path="res://icon.svg" id="1_rj3um"]
 [ext_resource type="Script" path="res://Scripts/Mr Flap.gd" id="1_t8byd"]
-[ext_resource type="PackedScene" uid="uid://c6e6ugg5w3y07" path="res://Prefabs/pipes.tscn" id="3_ml82s"]
 [ext_resource type="Script" path="res://Scripts/Game State Manager.gd" id="4_qaupv"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwnke"]
-size = Vector2(118, 118)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e5h4"]
-size = Vector2(768, 128)
+[ext_resource type="Script" path="res://Scripts/PipeDespawner.gd" id="5_7cp3p"]
+[ext_resource type="Script" path="res://Scripts/PipeSpawner.gd" id="5_og7wa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_akevw"]
 font_size = 50
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwnke"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e5h4"]
+size = Vector2(768, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnj1m"]
+size = Vector2(20, 1568)
+
 [node name="Node 2D" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.605, 0.605)
-
-[node name="Mr Flap" type="RigidBody2D" parent="." groups=["Player"]]
-position = Vector2(-592, -112)
-collision_layer = 5
-collision_mask = 5
-gravity_scale = 2.0
-max_contacts_reported = 4
-contact_monitor = true
-script = ExtResource("1_t8byd")
-jump_strength = 700.0
-
-[node name="Sprite2D" type="Sprite2D" parent="Mr Flap"]
-texture = ExtResource("1_rj3um")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mr Flap"]
-shape = SubResource("RectangleShape2D_fwnke")
-
-[node name="Ground" type="StaticBody2D" parent="." groups=["Obstacle"]]
-position = Vector2(0, 608)
-scale = Vector2(2.64049, 2.28645)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground"]
-scale = Vector2(6, 1)
-texture = ExtResource("1_rj3um")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-shape = SubResource("RectangleShape2D_8e5h4")
-
-[node name="Pipes" parent="." instance=ExtResource("3_ml82s")]
-
-[node name="Game State Manager" type="Node2D" parent="."]
-script = ExtResource("4_qaupv")
-
 [node name="Control" type="Control" parent="."]
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,4 +48,50 @@ label_settings = SubResource("LabelSettings_akevw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.605, 0.605)
+
+[node name="Mr Flap" type="RigidBody2D" parent="." groups=["Player"]]
+position = Vector2(-592, -112)
+collision_layer = 5
+collision_mask = 5
+gravity_scale = 3.5
+max_contacts_reported = 4
+contact_monitor = true
+script = ExtResource("1_t8byd")
+jump_strength = 900.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Mr Flap"]
+texture = ExtResource("1_rj3um")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mr Flap"]
+shape = SubResource("RectangleShape2D_fwnke")
+
+[node name="Ground" type="StaticBody2D" parent="." groups=["Obstacle"]]
+position = Vector2(0, 608)
+scale = Vector2(2.64049, 2.28645)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+scale = Vector2(6, 1)
+texture = ExtResource("1_rj3um")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_8e5h4")
+
+[node name="Game State Manager" type="Node2D" parent="."]
+script = ExtResource("4_qaupv")
+
+[node name="Pipe Spawner" type="Node2D" parent="."]
+position = Vector2(952, 0)
+script = ExtResource("5_og7wa")
+spawn_frequencey_final = 0.85
+
+[node name="Pipe Despawner" type="Area2D" parent="."]
+script = ExtResource("5_7cp3p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe Despawner"]
+position = Vector2(-1240, 0)
+shape = SubResource("RectangleShape2D_vnj1m")
+
 [connection signal="body_entered" from="Mr Flap" to="Mr Flap" method="_on_body_entered"]
+[connection signal="area_entered" from="Pipe Despawner" to="Pipe Despawner" method="_on_area_entered"]

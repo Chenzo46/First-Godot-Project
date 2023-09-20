@@ -1,6 +1,8 @@
 res://Scenes/Sample Scene.tscn
 res://Scripts/Icon.gd
+res://Scripts/PipeSpawner.gd
 res://Prefabs/pipes.tscn
+res://Scripts/PipeDespawner.gd
 res://Scripts/pipes.gd
 res://Scripts/Mr Flap.gd
 res://Scripts/Game State Manager.gd

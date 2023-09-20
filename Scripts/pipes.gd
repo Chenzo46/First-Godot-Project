@@ -10,6 +10,7 @@ func _ready():
 func _process(delta):
 	position.x -= speed * delta
 	
+	
 func _set_speed(new_speed:float):
 	speed = new_speed
 	
@@ -19,5 +20,4 @@ func _kill_player(body:Node2D):
 		
 func _increase_score(body:Node2D):
 	if body.is_in_group("Player"):
-		print("Score Increase entered")
 		GameStateManager._inc_score()
