@@ -1,15 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "k96uOegkQ1t4w4ETKQ0gjNfcXjHkAG3I6+sJZqqw7S3mKi/QaWFEqctVHNUzmkb9HH47nti6VjGKCvs+5MT3/g==",
+  "dgSpecHash": "6hJxY4WbkHsHvIMz3U12RCre1MeObqMoTjc8yRFZENGw2YR9BKns7BaSb9FTluLR+C8xoy5unYOx0GnFsYuGLQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\delig\\Desktop\\Godot Projects\\First Godot Test\\First-Godot-Project\\First Godot Test.csproj",
+  "projectFilePath": "C:\\Users\\delig\\OneDrive\\Desktop\\Godot Projects\\First-Godot-Project\\First Godot Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\delig\\.nuget\\packages\\godot.sourcegenerators\\4.1.1\\godot.sourcegenerators.4.1.1.nupkg.sha512",
     "C:\\Users\\delig\\.nuget\\packages\\godotsharp\\4.1.1\\godotsharp.4.1.1.nupkg.sha512",
-    "C:\\Users\\delig\\.nuget\\packages\\godotsharpeditor\\4.1.1\\godotsharpeditor.4.1.1.nupkg.sha512",
-    "C:\\Users\\delig\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.22\\microsoft.netcore.app.ref.6.0.22.nupkg.sha512",
-    "C:\\Users\\delig\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.22\\microsoft.windowsdesktop.app.ref.6.0.22.nupkg.sha512",
-    "C:\\Users\\delig\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.22\\microsoft.aspnetcore.app.ref.6.0.22.nupkg.sha512"
+    "C:\\Users\\delig\\.nuget\\packages\\godotsharpeditor\\4.1.1\\godotsharpeditor.4.1.1.nupkg.sha512"
   ],
   "logs": []
 }

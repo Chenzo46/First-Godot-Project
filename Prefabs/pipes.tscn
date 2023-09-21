@@ -36,3 +36,5 @@ shape = SubResource("RectangleShape2D_8e5h4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="score_keeper"]
 shape = SubResource("RectangleShape2D_fy3dr")
+
+[node name="Node" type="Node" parent="."]

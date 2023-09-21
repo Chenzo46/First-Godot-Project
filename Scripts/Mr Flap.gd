@@ -1,6 +1,9 @@
 extends RigidBody2D
 @export var jump_strength:float = 600
 
+func _ready():
+	$Sprite2D.modulate = Color(30,1,0)
+
 func _process(delta):
 	#Jump Code
 	if Input.is_action_just_pressed("Jump"):

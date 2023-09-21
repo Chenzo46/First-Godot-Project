@@ -93,11 +93,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\delig\\Desktop\\Godot Projects\\First Godot Test\\First-Godot-Project\\First Godot Test.csproj",
+      "projectUniqueName": "C:\\Users\\delig\\OneDrive\\Desktop\\Godot Projects\\First-Godot-Project\\First Godot Test.csproj",
       "projectName": "First Godot Test",
-      "projectPath": "C:\\Users\\delig\\Desktop\\Godot Projects\\First Godot Test\\First-Godot-Project\\First Godot Test.csproj",
+      "projectPath": "C:\\Users\\delig\\OneDrive\\Desktop\\Godot Projects\\First-Godot-Project\\First Godot Test.csproj",
       "packagesPath": "C:\\Users\\delig\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\delig\\Desktop\\Godot Projects\\First Godot Test\\First-Godot-Project\\.godot\\mono\\temp\\obj\\",
+      "outputPath": "C:\\Users\\delig\\OneDrive\\Desktop\\Godot Projects\\First-Godot-Project\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\delig\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -148,26 +148,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.22, 6.0.22]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.22, 6.0.22]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.22, 6.0.22]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.1.23463.5\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
