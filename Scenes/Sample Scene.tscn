@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dkeis8soqxpeh"]
+[gd_scene load_steps=29 format=3 uid="uid://dkeis8soqxpeh"]
 
 [ext_resource type="Script" path="res://Scripts/Score.gd" id="1_6mshp"]
 [ext_resource type="Script" path="res://Scripts/Mr Flap.gd" id="1_t8byd"]
@@ -7,9 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://byq4v5yjhd3vf" path="res://Sprites/bird.png" id="4_vm6mh"]
 [ext_resource type="Script" path="res://Scripts/PipeDespawner.gd" id="5_7cp3p"]
 [ext_resource type="Script" path="res://Scripts/PipeSpawner.gd" id="5_og7wa"]
-[ext_resource type="Script" path="res://Scenes/GroundScroller.gd" id="8_6y4ej"]
 [ext_resource type="Texture2D" uid="uid://8yh4io5hqvwa" path="res://Sprites/ground-bird.png" id="9_bi80c"]
+[ext_resource type="Script" path="res://Scripts/BackgroundParallaxLayer.gd" id="9_dkvaq"]
 [ext_resource type="Script" path="res://Scripts/GroundHit.gd" id="10_paxr7"]
+[ext_resource type="Texture2D" uid="uid://citxqr0hw4gjx" path="res://Sprites/mrflap-bg-1.png" id="10_v1tq5"]
+[ext_resource type="Texture2D" uid="uid://jylwkt3rab86" path="res://Sprites/mrflap-bg-2.png" id="11_sckd7"]
+[ext_resource type="Texture2D" uid="uid://bf0ffqy1jgsti" path="res://Sprites/mrflap-bg-0.png" id="11_vruw5"]
+[ext_resource type="Texture2D" uid="uid://br2bpvw5p8jnb" path="res://Sprites/mrflap-bg-3.png" id="12_kdvwk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_akevw"]
 font_size = 20
@@ -52,6 +56,9 @@ hue_variation_curve = SubResource("CurveTexture_fxbu7")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnj1m"]
 size = Vector2(42, 335)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6wuxb"]
+shader = ExtResource("3_duk4e")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4bjj0"]
 shader = ExtResource("3_duk4e")
@@ -125,6 +132,7 @@ shape = SubResource("CapsuleShape2D_yj1sa")
 
 [node name="Particles" type="GPUParticles2D" parent="Mr Flap"]
 z_index = -1
+emitting = false
 amount = 5
 process_material = SubResource("ParticleProcessMaterial_ba7qh")
 texture = ExtResource("4_vm6mh")
@@ -155,9 +163,123 @@ position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_vnj1m")
 
 [node name="Ground_Scroller" type="Node2D" parent="."]
-script = ExtResource("8_6y4ej")
 
-[node name="Grass" type="TileMap" parent="Ground_Scroller"]
+[node name="sky" type="Node2D" parent="Ground_Scroller" node_paths=PackedStringArray("parts")]
+script = ExtResource("9_dkvaq")
+parts = [NodePath("sky"), NodePath("sky2"), NodePath("sky3")]
+scroll_speed = 5.0
+min = -639.0
+max = 639.0
+
+[node name="sky" type="Sprite2D" parent="Ground_Scroller/sky"]
+z_index = -5
+texture_filter = 2
+material = SubResource("ShaderMaterial_6wuxb")
+texture = ExtResource("11_vruw5")
+
+[node name="sky2" type="Sprite2D" parent="Ground_Scroller/sky"]
+z_index = -5
+texture_filter = 2
+material = SubResource("ShaderMaterial_6wuxb")
+position = Vector2(640, 0)
+texture = ExtResource("11_vruw5")
+
+[node name="sky3" type="Sprite2D" parent="Ground_Scroller/sky"]
+z_index = -5
+texture_filter = 2
+material = SubResource("ShaderMaterial_6wuxb")
+position = Vector2(-639, 0)
+texture = ExtResource("11_vruw5")
+
+[node name="Pink Mountain" type="Node2D" parent="Ground_Scroller" node_paths=PackedStringArray("parts")]
+script = ExtResource("9_dkvaq")
+parts = [NodePath("pink mountain"), NodePath("pink mountain2"), NodePath("pink mountain3")]
+scroll_speed = 50.0
+min = -639.0
+max = 639.0
+
+[node name="pink mountain" type="Sprite2D" parent="Ground_Scroller/Pink Mountain"]
+z_index = -4
+texture_filter = 2
+material = SubResource("ShaderMaterial_6wuxb")
+texture = ExtResource("10_v1tq5")
+
+[node name="pink mountain2" type="Sprite2D" parent="Ground_Scroller/Pink Mountain"]
+z_index = -4
+texture_filter = 2
+material = SubResource("ShaderMaterial_6wuxb")
+position = Vector2(639, 0)
+texture = ExtResource("10_v1tq5")
+
+[node name="pink mountain3" type="Sprite2D" parent="Ground_Scroller/Pink Mountain"]
+z_index = -4
+texture_filter = 2
+material = SubResource("ShaderMaterial_6wuxb")
+position = Vector2(-639, 0)
+texture = ExtResource("10_v1tq5")
+
+[node name="Purple Mountain" type="Node2D" parent="Ground_Scroller" node_paths=PackedStringArray("parts")]
+script = ExtResource("9_dkvaq")
+parts = [NodePath("purple mountain"), NodePath("purple mountain2"), NodePath("purple mountain3")]
+scroll_speed = 100.0
+min = -639.0
+max = 639.0
+
+[node name="purple mountain" type="Sprite2D" parent="Ground_Scroller/Purple Mountain"]
+z_index = -3
+texture_filter = 2
+material = SubResource("ShaderMaterial_6wuxb")
+texture = ExtResource("11_sckd7")
+
+[node name="purple mountain2" type="Sprite2D" parent="Ground_Scroller/Purple Mountain"]
+z_index = -3
+texture_filter = 2
+material = SubResource("ShaderMaterial_6wuxb")
+position = Vector2(639, 0)
+texture = ExtResource("11_sckd7")
+
+[node name="purple mountain3" type="Sprite2D" parent="Ground_Scroller/Purple Mountain"]
+z_index = -3
+texture_filter = 2
+material = SubResource("ShaderMaterial_6wuxb")
+position = Vector2(-639, 0)
+texture = ExtResource("11_sckd7")
+
+[node name="Grass" type="Node2D" parent="Ground_Scroller" node_paths=PackedStringArray("parts")]
+position = Vector2(0, -22)
+script = ExtResource("9_dkvaq")
+parts = [NodePath("grass"), NodePath("grass1"), NodePath("grass2")]
+scroll_speed = 250.0
+min = -639.0
+max = 639.0
+
+[node name="grass" type="Sprite2D" parent="Ground_Scroller/Grass"]
+z_index = 1
+texture_filter = 2
+material = SubResource("ShaderMaterial_6wuxb")
+texture = ExtResource("12_kdvwk")
+
+[node name="grass1" type="Sprite2D" parent="Ground_Scroller/Grass"]
+z_index = 1
+texture_filter = 2
+material = SubResource("ShaderMaterial_6wuxb")
+position = Vector2(639, 0)
+texture = ExtResource("12_kdvwk")
+
+[node name="grass2" type="Sprite2D" parent="Ground_Scroller/Grass"]
+z_index = 1
+texture_filter = 2
+material = SubResource("ShaderMaterial_6wuxb")
+position = Vector2(-639, 0)
+texture = ExtResource("12_kdvwk")
+
+[node name="Ground" type="Node2D" parent="Ground_Scroller" node_paths=PackedStringArray("parts")]
+script = ExtResource("9_dkvaq")
+parts = [NodePath("Grass"), NodePath("Grass2"), NodePath("Grass3")]
+min = -639.0
+max = 639.0
+
+[node name="Grass" type="TileMap" parent="Ground_Scroller/Ground"]
 texture_filter = 2
 material = SubResource("ShaderMaterial_4bjj0")
 tile_set = SubResource("TileSet_4v0a5")
@@ -165,49 +287,46 @@ cell_quadrant_size = 32
 format = 2
 layer_0/tile_data = PackedInt32Array(327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 327670, 0, 0, 262153, 0, 0, 393206, 65536, 0, 393207, 65536, 0, 393208, 65536, 0, 393209, 65536, 0, 393210, 65536, 0, 393211, 65536, 0, 393212, 65536, 0, 393213, 65536, 0, 393214, 65536, 0, 393215, 65536, 0, 327680, 65536, 0, 327681, 65536, 0, 327682, 65536, 0, 327683, 65536, 0, 327684, 65536, 0, 327685, 65536, 0, 327686, 65536, 0, 327687, 65536, 0, 327688, 65536, 0, 327689, 65536, 0)
 
-[node name="GroundHit" type="Area2D" parent="Ground_Scroller/Grass"]
+[node name="GroundHit" type="Area2D" parent="Ground_Scroller/Ground/Grass"]
 script = ExtResource("10_paxr7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_Scroller/Grass/GroundHit"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_Scroller/Ground/Grass/GroundHit"]
 position = Vector2(0, 144)
 shape = SubResource("RectangleShape2D_v67im")
 
-[node name="Grass2" type="TileMap" parent="Ground_Scroller"]
+[node name="Grass2" type="TileMap" parent="Ground_Scroller/Ground"]
 texture_filter = 2
 material = SubResource("ShaderMaterial_4bjj0")
-position = Vector2(638, 0)
+position = Vector2(639, 0)
 tile_set = SubResource("TileSet_4v0a5")
 cell_quadrant_size = 32
 format = 2
 layer_0/tile_data = PackedInt32Array(327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 327670, 0, 0, 262153, 0, 0, 393206, 65536, 0, 393207, 65536, 0, 393208, 65536, 0, 393209, 65536, 0, 393210, 65536, 0, 393211, 65536, 0, 393212, 65536, 0, 393213, 65536, 0, 393214, 65536, 0, 393215, 65536, 0, 327680, 65536, 0, 327681, 65536, 0, 327682, 65536, 0, 327683, 65536, 0, 327684, 65536, 0, 327685, 65536, 0, 327686, 65536, 0, 327687, 65536, 0, 327688, 65536, 0, 327689, 65536, 0)
 
-[node name="GroundHit" type="Area2D" parent="Ground_Scroller/Grass2"]
+[node name="GroundHit" type="Area2D" parent="Ground_Scroller/Ground/Grass2"]
 script = ExtResource("10_paxr7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_Scroller/Grass2/GroundHit"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_Scroller/Ground/Grass2/GroundHit"]
 position = Vector2(0, 144)
 shape = SubResource("RectangleShape2D_v67im")
 
-[node name="Grass3" type="TileMap" parent="Ground_Scroller"]
+[node name="Grass3" type="TileMap" parent="Ground_Scroller/Ground"]
 texture_filter = 2
 material = SubResource("ShaderMaterial_4bjj0")
-position = Vector2(-638, 0)
+position = Vector2(-639, 0)
 tile_set = SubResource("TileSet_4v0a5")
 cell_quadrant_size = 32
 format = 2
 layer_0/tile_data = PackedInt32Array(327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 327670, 0, 0, 262153, 0, 0, 393206, 65536, 0, 393207, 65536, 0, 393208, 65536, 0, 393209, 65536, 0, 393210, 65536, 0, 393211, 65536, 0, 393212, 65536, 0, 393213, 65536, 0, 393214, 65536, 0, 393215, 65536, 0, 327680, 65536, 0, 327681, 65536, 0, 327682, 65536, 0, 327683, 65536, 0, 327684, 65536, 0, 327685, 65536, 0, 327686, 65536, 0, 327687, 65536, 0, 327688, 65536, 0, 327689, 65536, 0)
 
-[node name="GroundHit" type="Area2D" parent="Ground_Scroller/Grass3"]
+[node name="GroundHit" type="Area2D" parent="Ground_Scroller/Ground/Grass3"]
 script = ExtResource("10_paxr7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_Scroller/Grass3/GroundHit"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_Scroller/Ground/Grass3/GroundHit"]
 position = Vector2(0, 144)
 shape = SubResource("RectangleShape2D_v67im")
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(-319, 128)
 
 [connection signal="area_entered" from="Pipe Despawner" to="Pipe Despawner" method="_on_area_entered"]
-[connection signal="body_entered" from="Ground_Scroller/Grass/GroundHit" to="Ground_Scroller/Grass/GroundHit" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground_Scroller/Grass2/GroundHit" to="Ground_Scroller/Grass2/GroundHit" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground_Scroller/Grass3/GroundHit" to="Ground_Scroller/Grass3/GroundHit" method="_on_body_entered"]
+[connection signal="body_entered" from="Ground_Scroller/Ground/Grass/GroundHit" to="Ground_Scroller/Ground/Grass/GroundHit" method="_on_body_entered"]
+[connection signal="body_entered" from="Ground_Scroller/Ground/Grass2/GroundHit" to="Ground_Scroller/Ground/Grass2/GroundHit" method="_on_body_entered"]
+[connection signal="body_entered" from="Ground_Scroller/Ground/Grass3/GroundHit" to="Ground_Scroller/Ground/Grass3/GroundHit" method="_on_body_entered"]

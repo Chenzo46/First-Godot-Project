@@ -1,5 +1,6 @@
-Node2D
+BackgroundParallaxLayer
 Sprite2D
+Node2D
 ParallaxLayer
 ParallaxBackground
 CollisionShape2D
