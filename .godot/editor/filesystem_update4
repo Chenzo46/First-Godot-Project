@@ -2,3 +2,5 @@ res://Scenes/Sample Scene.tscn
 res://Scripts/Icon.gd
 res://Prefabs/pipes.tscn
 res://Scripts/Mr Flap.gd
+res://Scripts/pipes.gd
+res://Scripts/PipeSpawner.gd

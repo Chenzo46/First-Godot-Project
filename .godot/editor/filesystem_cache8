@@ -1,17 +1,21 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1695312967
-export_presets.cfg::TextFile::-1::1695218051::0::1::::<><>::
-icon.svg::CompressedTexture2D::7647469128196485378::1695132287::1695312972::1::::<><>::
-::res://Prefabs/::1695312921
-pipes.tscn::PackedScene::6958871299637822034::1695312921::0::1::::<><>::uid://dg7qx1kvejhb3::::res://icon.svg<>res://Scripts/pipes.gd
-top_down_plr.tscn::PackedScene::613755209362904713::1695140199::0::1::::<><>::uid://dg7qx1kvejhb3::::res://icon.svg<>res://Scripts/Icon.gd
-::res://Scenes/::1695312921
-Sample Scene.tscn::PackedScene::7869927640443718979::1695312921::0::1::::<><>::res://Scripts/Score.gd<>uid://dg7qx1kvejhb3::::res://icon.svg<>res://Scripts/Mr Flap.gd<>res://Scripts/Game State Manager.gd<>res://Scripts/PipeDespawner.gd<>res://Scripts/PipeSpawner.gd
-::res://Scripts/::1695312921
-Game State Manager.gd::GDScript::-1::1695312921::0::1::::<>Node2D<>::
-Icon.gd::GDScript::-1::1695218165::0::1::::<>Sprite2D<>::
-Mr Flap.gd::GDScript::-1::1695312921::0::1::::<>RigidBody2D<>::
-PipeDespawner.gd::GDScript::-1::1695230711::0::1::::<>Area2D<>::
-pipes.gd::GDScript::-1::1695312921::0::1::::<>Node2D<>::
-PipeSpawner.gd::GDScript::-1::1695230628::0::1::::<>Node2D<>::
-Score.gd::GDScript::-1::1695312921::0::1::::<>Label<>::
+::res://::1695347837
+export_presets.cfg::TextFile::-1::1695181412::0::1::::<><>::
+::res://Prefabs/::1695347878
+pipes.tscn::PackedScene::6958871299637822034::1695347878::0::1::::<><>::res://Scripts/pipes.gd<>uid://dg7qx1kvejhb3::::res://Sprites/icon.svg
+top_down_plr.tscn::PackedScene::613755209362904713::1695347837::0::1::::<><>::uid://dg7qx1kvejhb3::::res://Sprites/icon.svg<>res://Scripts/Icon.gd
+::res://Scenes/::1695347878
+Sample Scene.tscn::PackedScene::7869927640443718979::1695347878::0::1::::<><>::res://Scripts/Score.gd<>res://Scripts/Mr Flap.gd<>uid://dg7qx1kvejhb3::::res://Sprites/icon.svg<>res://Scripts/Game State Manager.gd<>uid://byq4v5yjhd3vf::::res://Sprites/bird.png<>res://Scripts/PipeDespawner.gd<>res://Scripts/PipeSpawner.gd
+::res://Scripts/::1695345731
+Game State Manager.gd::GDScript::-1::1695244820::0::1::::<>Node2D<>::
+Icon.gd::GDScript::-1::1695345363::0::1::::<>Sprite2D<>::
+Mr Flap.gd::GDScript::-1::1695345731::0::1::::<>RigidBody2D<>::
+PipeDespawner.gd::GDScript::-1::1695243160::0::1::::<>Area2D<>::
+pipes.gd::GDScript::-1::1695267148::0::1::::<>Node2D<>::
+PipeSpawner.gd::GDScript::-1::1695243160::0::1::::<>Node2D<>::
+Score.gd::GDScript::-1::1695244769::0::1::::<>Label<>::
+::res://Sprites/::1695347935
+bird.png::CompressedTexture2D::4105782882727299431::1695347851::1695348169::1::::<><>::
+ground-bird.png::CompressedTexture2D::2366254156312244464::1695347856::1695347856::1::::<><>::
+icon.svg::CompressedTexture2D::7647469128196485378::1695155941::1695347837::1::::<><>::
+pipe.png::CompressedTexture2D::4374084487038859654::1695347861::1695347861::1::::<><>::

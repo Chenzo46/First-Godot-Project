@@ -1,20 +1,21 @@
-[gd_scene load_steps=16 format=3 uid="uid://dkeis8soqxpeh"]
+[gd_scene load_steps=17 format=3 uid="uid://dkeis8soqxpeh"]
 
 [ext_resource type="Script" path="res://Scripts/Score.gd" id="1_6mshp"]
-[ext_resource type="Texture2D" uid="uid://dg7qx1kvejhb3" path="res://icon.svg" id="1_rj3um"]
 [ext_resource type="Script" path="res://Scripts/Mr Flap.gd" id="1_t8byd"]
+[ext_resource type="Texture2D" uid="uid://dg7qx1kvejhb3" path="res://Sprites/icon.svg" id="3_l34c7"]
 [ext_resource type="Script" path="res://Scripts/Game State Manager.gd" id="4_qaupv"]
+[ext_resource type="Texture2D" uid="uid://byq4v5yjhd3vf" path="res://Sprites/bird.png" id="4_vm6mh"]
 [ext_resource type="Script" path="res://Scripts/PipeDespawner.gd" id="5_7cp3p"]
 [ext_resource type="Script" path="res://Scripts/PipeSpawner.gd" id="5_og7wa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_akevw"]
-font_size = 50
+font_size = 20
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fwnke"]
-size = Vector2(96, 96)
+size = Vector2(16, 16)
 
 [sub_resource type="Gradient" id="Gradient_0yb5n"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_02nt7"]
 gradient = SubResource("Gradient_0yb5n")
@@ -67,9 +68,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -67.0
-offset_right = 67.0
-offset_bottom = 72.0
+offset_left = -64.0
+offset_top = 376.0
+offset_right = 70.0
+offset_bottom = 448.0
 grow_horizontal = 2
 text = "Score"
 label_settings = SubResource("LabelSettings_akevw")
@@ -78,36 +80,37 @@ vertical_alignment = 1
 script = ExtResource("1_6mshp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.605, 0.605)
+zoom = Vector2(2.085, 2.085)
 
 [node name="Mr Flap" type="RigidBody2D" parent="." groups=["Player"]]
-position = Vector2(-592, -112)
-gravity_scale = 3.5
+position = Vector2(-203, 0)
 max_contacts_reported = 4
 contact_monitor = true
 script = ExtResource("1_t8byd")
-jump_strength = 900.0
+jump_strength = 300.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Mr Flap"]
-texture = ExtResource("1_rj3um")
+texture = ExtResource("4_vm6mh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mr Flap"]
 shape = SubResource("RectangleShape2D_fwnke")
 
 [node name="Particles" type="GPUParticles2D" parent="Mr Flap"]
 z_index = -1
+emitting = false
 amount = 5
 process_material = SubResource("ParticleProcessMaterial_ba7qh")
-texture = ExtResource("1_rj3um")
+texture = ExtResource("3_l34c7")
+lifetime = 0.7
 fixed_fps = 60
 
 [node name="Ground" type="StaticBody2D" parent="." groups=["Obstacle"]]
-position = Vector2(0, 736)
+position = Vector2(0, 312)
 scale = Vector2(2.64049, 2.28645)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground"]
 scale = Vector2(6, 1)
-texture = ExtResource("1_rj3um")
+texture = ExtResource("3_l34c7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 shape = SubResource("RectangleShape2D_8e5h4")
@@ -116,10 +119,16 @@ shape = SubResource("RectangleShape2D_8e5h4")
 script = ExtResource("4_qaupv")
 
 [node name="Pipe Spawner" type="Node2D" parent="."]
-position = Vector2(912, 0)
+position = Vector2(312, 0)
 script = ExtResource("5_og7wa")
 spawn_frequencey_final = 1.0
 spawn_frequencey_dwindle = 0.003
+
+[node name="p1" type="Node2D" parent="Pipe Spawner"]
+position = Vector2(0, -80)
+
+[node name="p2" type="Node2D" parent="Pipe Spawner"]
+position = Vector2(0, 80)
 
 [node name="Pipe Despawner" type="Area2D" parent="."]
 script = ExtResource("5_7cp3p")

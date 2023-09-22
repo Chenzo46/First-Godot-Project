@@ -13,7 +13,7 @@ config_version=5
 config/name="First Godot Test"
 run/main_scene="res://Scenes/Sample Scene.tscn"
 config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/icon.svg"
 
 [autoload]
 
@@ -53,5 +53,6 @@ Jump={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

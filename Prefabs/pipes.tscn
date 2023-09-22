@@ -1,35 +1,37 @@
 [gd_scene load_steps=5 format=3 uid="uid://c6e6ugg5w3y07"]
 
-[ext_resource type="Texture2D" uid="uid://dg7qx1kvejhb3" path="res://icon.svg" id="1_otwh6"]
 [ext_resource type="Script" path="res://Scripts/pipes.gd" id="1_wkn6p"]
+[ext_resource type="Texture2D" uid="uid://b3k3sdrapsxkw" path="res://Sprites/pipe.png" id="2_qurbc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8e5h4"]
-size = Vector2(128, 608)
+size = Vector2(48, 186)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fy3dr"]
-size = Vector2(16, 432)
+size = Vector2(16, 176)
 
 [node name="Pipes" type="Node2D"]
 script = ExtResource("1_wkn6p")
 
 [node name="top" type="Area2D" parent="." groups=["Obstacle"]]
-position = Vector2(0, -520)
+position = Vector2(0, -144)
 
 [node name="Sprite2D" type="Sprite2D" parent="top"]
-scale = Vector2(1.125, 5)
-texture = ExtResource("1_otwh6")
+rotation = 3.14159
+texture = ExtResource("2_qurbc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="top"]
 shape = SubResource("RectangleShape2D_8e5h4")
 
 [node name="bottom" type="Area2D" parent="." groups=["Obstacle"]]
-position = Vector2(0, 520)
+position = Vector2(0, 144)
+rotation = 3.14159
 
 [node name="Sprite2D" type="Sprite2D" parent="bottom"]
-scale = Vector2(1.125, 5)
-texture = ExtResource("1_otwh6")
+rotation = 3.14159
+texture = ExtResource("2_qurbc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bottom"]
+position = Vector2(5.45697e-12, 0)
 shape = SubResource("RectangleShape2D_8e5h4")
 
 [node name="score_keeper" type="Area2D" parent="."]
