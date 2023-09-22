@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dkeis8soqxpeh"]
+[gd_scene load_steps=16 format=3 uid="uid://dkeis8soqxpeh"]
 
 [ext_resource type="Script" path="res://Scripts/Score.gd" id="1_6mshp"]
 [ext_resource type="Texture2D" uid="uid://dg7qx1kvejhb3" path="res://icon.svg" id="1_rj3um"]
@@ -13,11 +13,11 @@ font_size = 50
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fwnke"]
 size = Vector2(96, 96)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e5h4"]
-size = Vector2(768, 128)
+[sub_resource type="Gradient" id="Gradient_0yb5n"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnj1m"]
-size = Vector2(20, 1568)
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_02nt7"]
+gradient = SubResource("Gradient_0yb5n")
 
 [sub_resource type="Curve" id="Curve_hj2we"]
 min_value = -1.0
@@ -29,21 +29,23 @@ curve = SubResource("Curve_hj2we")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ba7qh"]
 particle_flag_disable_z = true
-spread = 180.0
+direction = Vector3(-1, 0, 0)
+spread = 0.0
 gravity = Vector3(0, 0, 0)
-initial_velocity_min = 197.15
-initial_velocity_max = 197.15
+initial_velocity_min = 500.0
+initial_velocity_max = 500.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
-linear_accel_min = 3.1
-linear_accel_max = 3.1
-radial_accel_min = 33.88
-radial_accel_max = 55.74
-tangential_accel_min = 27.9
-tangential_accel_max = 31.4
+color_ramp = SubResource("GradientTexture1D_02nt7")
 hue_variation_min = -1.0
 hue_variation_max = -0.6
 hue_variation_curve = SubResource("CurveTexture_fxbu7")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e5h4"]
+size = Vector2(768, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnj1m"]
+size = Vector2(20, 1568)
 
 [node name="Node 2D" type="Node2D"]
 
@@ -92,8 +94,15 @@ texture = ExtResource("1_rj3um")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mr Flap"]
 shape = SubResource("RectangleShape2D_fwnke")
 
+[node name="Particles" type="GPUParticles2D" parent="Mr Flap"]
+z_index = -1
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_ba7qh")
+texture = ExtResource("1_rj3um")
+fixed_fps = 60
+
 [node name="Ground" type="StaticBody2D" parent="." groups=["Obstacle"]]
-position = Vector2(0, 608)
+position = Vector2(0, 736)
 scale = Vector2(2.64049, 2.28645)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground"]
@@ -118,15 +127,6 @@ script = ExtResource("5_7cp3p")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe Despawner"]
 position = Vector2(-1240, 0)
 shape = SubResource("RectangleShape2D_vnj1m")
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(120, -48)
-emitting = false
-amount = 20
-process_material = SubResource("ParticleProcessMaterial_ba7qh")
-texture = ExtResource("1_rj3um")
-lifetime = 4.21
-fixed_fps = 60
 
 [connection signal="body_entered" from="Mr Flap" to="Mr Flap" method="_on_body_entered"]
 [connection signal="area_entered" from="Pipe Despawner" to="Pipe Despawner" method="_on_area_entered"]
