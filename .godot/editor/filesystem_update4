@@ -1,9 +1,7 @@
 res://Scenes/Sample Scene.tscn
 res://Scripts/Icon.gd
+res://Shaders/SmoothPixel.tres
 res://Prefabs/pipes.tscn
 res://Scripts/Mr Flap.gd
-res://Scripts/pipes.gd
-res://Scripts/PipeSpawner.gd
-res://Shaders/SmoothPixel.tres
-res://Scripts/Score.gd
-res://Scripts/GroundHit.gd
+res://Scenes/ParallaxScroll.gd
+res://Scenes/GroundScroller.gd

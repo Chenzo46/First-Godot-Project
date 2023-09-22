@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://1bpw84pkqym8" path="res://Shaders/SmoothPixel.tres" id="2_hvvrx"]
 [ext_resource type="Texture2D" uid="uid://b3k3sdrapsxkw" path="res://Sprites/pipe.png" id="2_qurbc"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_c5iuu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vvi0a"]
 shader = ExtResource("2_hvvrx")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8e5h4"]
@@ -24,7 +24,7 @@ position = Vector2(0, -144)
 
 [node name="Sprite2D" type="Sprite2D" parent="top"]
 texture_filter = 2
-material = SubResource("ShaderMaterial_c5iuu")
+material = SubResource("ShaderMaterial_vvi0a")
 rotation = 3.14159
 texture = ExtResource("2_qurbc")
 

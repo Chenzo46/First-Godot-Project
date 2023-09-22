@@ -3,18 +3,18 @@
 [ext_resource type="Script" path="res://Scripts/Score.gd" id="1_6mshp"]
 [ext_resource type="Script" path="res://Scripts/Mr Flap.gd" id="1_t8byd"]
 [ext_resource type="Shader" uid="uid://1bpw84pkqym8" path="res://Shaders/SmoothPixel.tres" id="3_duk4e"]
-[ext_resource type="Texture2D" uid="uid://dg7qx1kvejhb3" path="res://Sprites/icon.svg" id="3_l34c7"]
 [ext_resource type="Script" path="res://Scripts/Game State Manager.gd" id="4_qaupv"]
 [ext_resource type="Texture2D" uid="uid://byq4v5yjhd3vf" path="res://Sprites/bird.png" id="4_vm6mh"]
 [ext_resource type="Script" path="res://Scripts/PipeDespawner.gd" id="5_7cp3p"]
 [ext_resource type="Script" path="res://Scripts/PipeSpawner.gd" id="5_og7wa"]
+[ext_resource type="Script" path="res://Scenes/GroundScroller.gd" id="8_6y4ej"]
 [ext_resource type="Texture2D" uid="uid://8yh4io5hqvwa" path="res://Sprites/ground-bird.png" id="9_bi80c"]
 [ext_resource type="Script" path="res://Scripts/GroundHit.gd" id="10_paxr7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_akevw"]
 font_size = 20
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mli4c"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8odc5"]
 shader = ExtResource("3_duk4e")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yj1sa"]
@@ -22,6 +22,7 @@ radius = 10.23
 height = 20.71
 
 [sub_resource type="Gradient" id="Gradient_0yb5n"]
+offsets = PackedFloat32Array(0, 0.282051)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_02nt7"]
@@ -40,8 +41,8 @@ particle_flag_disable_z = true
 direction = Vector3(-1, 0, 0)
 spread = 0.0
 gravity = Vector3(0, 0, 0)
-initial_velocity_min = 500.0
-initial_velocity_max = 500.0
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 color_ramp = SubResource("GradientTexture1D_02nt7")
@@ -116,7 +117,7 @@ jump_strength = 300.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Mr Flap"]
 texture_filter = 2
-material = SubResource("ShaderMaterial_mli4c")
+material = SubResource("ShaderMaterial_8odc5")
 texture = ExtResource("4_vm6mh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mr Flap"]
@@ -124,11 +125,9 @@ shape = SubResource("CapsuleShape2D_yj1sa")
 
 [node name="Particles" type="GPUParticles2D" parent="Mr Flap"]
 z_index = -1
-emitting = false
 amount = 5
 process_material = SubResource("ParticleProcessMaterial_ba7qh")
-texture = ExtResource("3_l34c7")
-lifetime = 0.7
+texture = ExtResource("4_vm6mh")
 fixed_fps = 60
 
 [node name="Game State Manager" type="Node2D" parent="."]
@@ -137,8 +136,8 @@ script = ExtResource("4_qaupv")
 [node name="Pipe Spawner" type="Node2D" parent="."]
 position = Vector2(312, 0)
 script = ExtResource("5_og7wa")
-spawn_frequencey = 1.2
-spawn_frequencey_final = 0.9
+spawn_frequencey = 1.5
+spawn_frequencey_final = 0.85
 spawn_frequencey_dwindle = 0.003
 
 [node name="p1" type="Node2D" parent="Pipe Spawner"]
@@ -155,21 +154,60 @@ script = ExtResource("5_7cp3p")
 position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_vnj1m")
 
-[node name="Grass" type="TileMap" parent="."]
+[node name="Ground_Scroller" type="Node2D" parent="."]
+script = ExtResource("8_6y4ej")
+
+[node name="Grass" type="TileMap" parent="Ground_Scroller"]
 texture_filter = 2
 material = SubResource("ShaderMaterial_4bjj0")
 tile_set = SubResource("TileSet_4v0a5")
 cell_quadrant_size = 32
 format = 2
-layer_0/tile_data = PackedInt32Array(327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 327670, 0, 0, 262153, 0, 0)
+layer_0/tile_data = PackedInt32Array(327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 327670, 0, 0, 262153, 0, 0, 393206, 65536, 0, 393207, 65536, 0, 393208, 65536, 0, 393209, 65536, 0, 393210, 65536, 0, 393211, 65536, 0, 393212, 65536, 0, 393213, 65536, 0, 393214, 65536, 0, 393215, 65536, 0, 327680, 65536, 0, 327681, 65536, 0, 327682, 65536, 0, 327683, 65536, 0, 327684, 65536, 0, 327685, 65536, 0, 327686, 65536, 0, 327687, 65536, 0, 327688, 65536, 0, 327689, 65536, 0)
 
-[node name="GroundHit" type="Area2D" parent="Grass"]
+[node name="GroundHit" type="Area2D" parent="Ground_Scroller/Grass"]
 script = ExtResource("10_paxr7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Grass/GroundHit"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_Scroller/Grass/GroundHit"]
 position = Vector2(0, 144)
 shape = SubResource("RectangleShape2D_v67im")
 
-[connection signal="body_entered" from="Mr Flap" to="Mr Flap" method="_on_body_entered"]
+[node name="Grass2" type="TileMap" parent="Ground_Scroller"]
+texture_filter = 2
+material = SubResource("ShaderMaterial_4bjj0")
+position = Vector2(638, 0)
+tile_set = SubResource("TileSet_4v0a5")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 327670, 0, 0, 262153, 0, 0, 393206, 65536, 0, 393207, 65536, 0, 393208, 65536, 0, 393209, 65536, 0, 393210, 65536, 0, 393211, 65536, 0, 393212, 65536, 0, 393213, 65536, 0, 393214, 65536, 0, 393215, 65536, 0, 327680, 65536, 0, 327681, 65536, 0, 327682, 65536, 0, 327683, 65536, 0, 327684, 65536, 0, 327685, 65536, 0, 327686, 65536, 0, 327687, 65536, 0, 327688, 65536, 0, 327689, 65536, 0)
+
+[node name="GroundHit" type="Area2D" parent="Ground_Scroller/Grass2"]
+script = ExtResource("10_paxr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_Scroller/Grass2/GroundHit"]
+position = Vector2(0, 144)
+shape = SubResource("RectangleShape2D_v67im")
+
+[node name="Grass3" type="TileMap" parent="Ground_Scroller"]
+texture_filter = 2
+material = SubResource("ShaderMaterial_4bjj0")
+position = Vector2(-638, 0)
+tile_set = SubResource("TileSet_4v0a5")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 327670, 0, 0, 262153, 0, 0, 393206, 65536, 0, 393207, 65536, 0, 393208, 65536, 0, 393209, 65536, 0, 393210, 65536, 0, 393211, 65536, 0, 393212, 65536, 0, 393213, 65536, 0, 393214, 65536, 0, 393215, 65536, 0, 327680, 65536, 0, 327681, 65536, 0, 327682, 65536, 0, 327683, 65536, 0, 327684, 65536, 0, 327685, 65536, 0, 327686, 65536, 0, 327687, 65536, 0, 327688, 65536, 0, 327689, 65536, 0)
+
+[node name="GroundHit" type="Area2D" parent="Ground_Scroller/Grass3"]
+script = ExtResource("10_paxr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_Scroller/Grass3/GroundHit"]
+position = Vector2(0, 144)
+shape = SubResource("RectangleShape2D_v67im")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-319, 128)
+
 [connection signal="area_entered" from="Pipe Despawner" to="Pipe Despawner" method="_on_area_entered"]
-[connection signal="body_entered" from="Grass/GroundHit" to="Grass/GroundHit" method="_on_body_entered"]
+[connection signal="body_entered" from="Ground_Scroller/Grass/GroundHit" to="Ground_Scroller/Grass/GroundHit" method="_on_body_entered"]
+[connection signal="body_entered" from="Ground_Scroller/Grass2/GroundHit" to="Ground_Scroller/Grass2/GroundHit" method="_on_body_entered"]
+[connection signal="body_entered" from="Ground_Scroller/Grass3/GroundHit" to="Ground_Scroller/Grass3/GroundHit" method="_on_body_entered"]

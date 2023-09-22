@@ -1,23 +1,24 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1695355218
-export_presets.cfg::TextFile::-1::1695181412::0::1::::<><>::
-::res://Prefabs/::1695353991
-pipes.tscn::PackedScene::6958871299637822034::1695353991::0::1::::<><>::res://Scripts/pipes.gd<>uid://b3k3sdrapsxkw::::res://Sprites/pipe.png
-top_down_plr.tscn::PackedScene::613755209362904713::1695347837::0::1::::<><>::uid://dg7qx1kvejhb3
-::res://Scenes/::1695353991
-Sample Scene.tscn::PackedScene::7869927640443718979::1695353991::0::1::::<><>::res://Scripts/Score.gd<>res://Scripts/Mr Flap.gd<>uid://dg7qx1kvejhb3::::res://Sprites/icon.svg<>res://Scripts/Game State Manager.gd<>uid://byq4v5yjhd3vf::::res://Sprites/bird.png<>res://Scripts/PipeDespawner.gd<>res://Scripts/PipeSpawner.gd
-::res://Scripts/::1695352926
-Game State Manager.gd::GDScript::-1::1695244820::0::1::::<>Node2D<>::
-Icon.gd::GDScript::-1::1695345363::0::1::::<>Sprite2D<>::
-Mr Flap.gd::GDScript::-1::1695349632::0::1::::<>RigidBody2D<>::
-PipeDespawner.gd::GDScript::-1::1695243160::0::1::::<>Area2D<>::
-pipes.gd::GDScript::-1::1695352926::0::1::::<>Node2D<>::
-PipeSpawner.gd::GDScript::-1::1695352916::0::1::::<>Node2D<>::
-Score.gd::GDScript::-1::1695244769::0::1::::<>Label<>::
-::res://Shaders/::1695355746
-SmoothPixel.gdshader::Shader::-1::1695355230::0::1::::<><>::
-::res://Sprites/::1695348169
-bird.png::CompressedTexture2D::4105782882727299431::1695347851::1695348169::1::::<><>::
-ground-bird.png::CompressedTexture2D::2366254156312244464::1695347856::1695347856::1::::<><>::
-icon.svg::CompressedTexture2D::7647469128196485378::1695155941::1695347837::1::::<><>::
-pipe.png::CompressedTexture2D::4374084487038859654::1695347861::1695347861::1::::<><>::
+::res://::1695396055
+export_presets.cfg::TextFile::-1::1695218051::0::1::::<><>::
+::res://Prefabs/::1695396018
+pipes.tscn::PackedScene::6958871299637822034::1695396018::0::1::::<><>::res://Scripts/pipes.gd<>uid://1bpw84pkqym8::::res://Shaders/SmoothPixel.tres<>uid://b3k3sdrapsxkw::::res://Sprites/pipe.png
+top_down_plr.tscn::PackedScene::613755209362904713::1695351870::0::1::::<><>::uid://dg7qx1kvejhb3::::res://Sprites/icon.svg<>res://Scripts/Icon.gd
+::res://Scenes/::1695396018
+Sample Scene.tscn::PackedScene::7869927640443718979::1695396018::0::1::::<><>::res://Scripts/Score.gd<>res://Scripts/Mr Flap.gd<>uid://1bpw84pkqym8::::res://Shaders/SmoothPixel.tres<>uid://dg7qx1kvejhb3::::res://Sprites/icon.svg<>res://Scripts/Game State Manager.gd<>uid://byq4v5yjhd3vf::::res://Sprites/bird.png<>res://Scripts/PipeDespawner.gd<>res://Scripts/PipeSpawner.gd<>uid://8yh4io5hqvwa::::res://Sprites/ground-bird.png<>res://Scripts/GroundHit.gd
+::res://Scripts/::1695396018
+Game State Manager.gd::GDScript::-1::1695312921::0::1::::<>Node2D<>::
+GroundHit.gd::GDScript::-1::1695396018::0::1::::<>Area2D<>::
+Icon.gd::GDScript::-1::1695351935::0::1::::<>Sprite2D<>::
+Mr Flap.gd::GDScript::-1::1695351870::0::1::::<>RigidBody2D<>::
+PipeDespawner.gd::GDScript::-1::1695230711::0::1::::<>Area2D<>::
+pipes.gd::GDScript::-1::1695396018::0::1::::<>Node2D<>::
+PipeSpawner.gd::GDScript::-1::1695351870::0::1::::<>Node2D<>::
+Score.gd::GDScript::-1::1695312921::0::1::::<>Label<>::
+::res://Shaders/::1695396018
+SmoothPixel.tres::Shader::1827926133465741017::1695396018::0::1::::<><>::
+::res://Sprites/::1695351870
+bird.png::CompressedTexture2D::4105782882727299431::1695351870::1695351870::1::::<><>::
+ground-bird.png::CompressedTexture2D::2366254156312244464::1695351870::1695351870::1::::<><>::
+icon.svg::CompressedTexture2D::7647469128196485378::1695351870::1695351870::1::::<><>::
+pipe.png::CompressedTexture2D::4374084487038859654::1695351870::1695351870::1::::<><>::
