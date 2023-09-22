@@ -1,10 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6e6ugg5w3y07"]
+[gd_scene load_steps=8 format=3 uid="uid://c6e6ugg5w3y07"]
 
 [ext_resource type="Script" path="res://Scripts/pipes.gd" id="1_wkn6p"]
+[ext_resource type="Shader" uid="uid://1bpw84pkqym8" path="res://Shaders/SmoothPixel.tres" id="2_hvvrx"]
 [ext_resource type="Texture2D" uid="uid://b3k3sdrapsxkw" path="res://Sprites/pipe.png" id="2_qurbc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c5iuu"]
+shader = ExtResource("2_hvvrx")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8e5h4"]
 size = Vector2(48, 186)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_00lna"]
+shader = ExtResource("2_hvvrx")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fy3dr"]
 size = Vector2(16, 176)
@@ -16,6 +23,8 @@ script = ExtResource("1_wkn6p")
 position = Vector2(0, -144)
 
 [node name="Sprite2D" type="Sprite2D" parent="top"]
+texture_filter = 2
+material = SubResource("ShaderMaterial_c5iuu")
 rotation = 3.14159
 texture = ExtResource("2_qurbc")
 
@@ -27,6 +36,8 @@ position = Vector2(0, 144)
 rotation = 3.14159
 
 [node name="Sprite2D" type="Sprite2D" parent="bottom"]
+texture_filter = 2
+material = SubResource("ShaderMaterial_00lna")
 rotation = 3.14159
 texture = ExtResource("2_qurbc")
 
@@ -38,5 +49,3 @@ shape = SubResource("RectangleShape2D_8e5h4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="score_keeper"]
 shape = SubResource("RectangleShape2D_fy3dr")
-
-[node name="Node" type="Node" parent="."]

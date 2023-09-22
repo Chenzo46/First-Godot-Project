@@ -1,18 +1,25 @@
-[gd_scene load_steps=17 format=3 uid="uid://dkeis8soqxpeh"]
+[gd_scene load_steps=24 format=3 uid="uid://dkeis8soqxpeh"]
 
 [ext_resource type="Script" path="res://Scripts/Score.gd" id="1_6mshp"]
 [ext_resource type="Script" path="res://Scripts/Mr Flap.gd" id="1_t8byd"]
+[ext_resource type="Shader" uid="uid://1bpw84pkqym8" path="res://Shaders/SmoothPixel.tres" id="3_duk4e"]
 [ext_resource type="Texture2D" uid="uid://dg7qx1kvejhb3" path="res://Sprites/icon.svg" id="3_l34c7"]
 [ext_resource type="Script" path="res://Scripts/Game State Manager.gd" id="4_qaupv"]
 [ext_resource type="Texture2D" uid="uid://byq4v5yjhd3vf" path="res://Sprites/bird.png" id="4_vm6mh"]
 [ext_resource type="Script" path="res://Scripts/PipeDespawner.gd" id="5_7cp3p"]
 [ext_resource type="Script" path="res://Scripts/PipeSpawner.gd" id="5_og7wa"]
+[ext_resource type="Texture2D" uid="uid://8yh4io5hqvwa" path="res://Sprites/ground-bird.png" id="9_bi80c"]
+[ext_resource type="Script" path="res://Scripts/GroundHit.gd" id="10_paxr7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_akevw"]
 font_size = 20
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwnke"]
-size = Vector2(16, 16)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mli4c"]
+shader = ExtResource("3_duk4e")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yj1sa"]
+radius = 10.23
+height = 20.71
 
 [sub_resource type="Gradient" id="Gradient_0yb5n"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -42,11 +49,29 @@ hue_variation_min = -1.0
 hue_variation_max = -0.6
 hue_variation_curve = SubResource("CurveTexture_fxbu7")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e5h4"]
-size = Vector2(768, 128)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnj1m"]
-size = Vector2(20, 1568)
+size = Vector2(42, 335)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4bjj0"]
+shader = ExtResource("3_duk4e")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eya5n"]
+texture = ExtResource("9_bi80c")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_4v0a5"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_eya5n")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v67im"]
+size = Vector2(638, 32)
 
 [node name="Node 2D" type="Node2D"]
 
@@ -68,9 +93,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -64.0
+offset_left = -67.0
 offset_top = 376.0
-offset_right = 70.0
+offset_right = 67.0
 offset_bottom = 448.0
 grow_horizontal = 2
 text = "Score"
@@ -80,7 +105,7 @@ vertical_alignment = 1
 script = ExtResource("1_6mshp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.085, 2.085)
+zoom = Vector2(1.175, 1.175)
 
 [node name="Mr Flap" type="RigidBody2D" parent="." groups=["Player"]]
 position = Vector2(-203, 0)
@@ -90,10 +115,12 @@ script = ExtResource("1_t8byd")
 jump_strength = 300.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Mr Flap"]
+texture_filter = 2
+material = SubResource("ShaderMaterial_mli4c")
 texture = ExtResource("4_vm6mh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mr Flap"]
-shape = SubResource("RectangleShape2D_fwnke")
+shape = SubResource("CapsuleShape2D_yj1sa")
 
 [node name="Particles" type="GPUParticles2D" parent="Mr Flap"]
 z_index = -1
@@ -104,38 +131,45 @@ texture = ExtResource("3_l34c7")
 lifetime = 0.7
 fixed_fps = 60
 
-[node name="Ground" type="StaticBody2D" parent="." groups=["Obstacle"]]
-position = Vector2(0, 312)
-scale = Vector2(2.64049, 2.28645)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground"]
-scale = Vector2(6, 1)
-texture = ExtResource("3_l34c7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-shape = SubResource("RectangleShape2D_8e5h4")
-
 [node name="Game State Manager" type="Node2D" parent="."]
 script = ExtResource("4_qaupv")
 
 [node name="Pipe Spawner" type="Node2D" parent="."]
 position = Vector2(312, 0)
 script = ExtResource("5_og7wa")
-spawn_frequencey_final = 1.0
+spawn_frequencey = 1.2
+spawn_frequencey_final = 0.9
 spawn_frequencey_dwindle = 0.003
 
 [node name="p1" type="Node2D" parent="Pipe Spawner"]
 position = Vector2(0, -80)
 
 [node name="p2" type="Node2D" parent="Pipe Spawner"]
-position = Vector2(0, 80)
+position = Vector2(0, 53)
 
 [node name="Pipe Despawner" type="Area2D" parent="."]
+position = Vector2(-367, 18)
 script = ExtResource("5_7cp3p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe Despawner"]
-position = Vector2(-1240, 0)
+position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_vnj1m")
+
+[node name="Grass" type="TileMap" parent="."]
+texture_filter = 2
+material = SubResource("ShaderMaterial_4bjj0")
+tile_set = SubResource("TileSet_4v0a5")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 327670, 0, 0, 262153, 0, 0)
+
+[node name="GroundHit" type="Area2D" parent="Grass"]
+script = ExtResource("10_paxr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grass/GroundHit"]
+position = Vector2(0, 144)
+shape = SubResource("RectangleShape2D_v67im")
 
 [connection signal="body_entered" from="Mr Flap" to="Mr Flap" method="_on_body_entered"]
 [connection signal="area_entered" from="Pipe Despawner" to="Pipe Despawner" method="_on_area_entered"]
+[connection signal="body_entered" from="Grass/GroundHit" to="Grass/GroundHit" method="_on_body_entered"]

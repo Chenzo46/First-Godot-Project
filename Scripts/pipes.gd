@@ -8,7 +8,6 @@ func _ready():
 	
 func _process(delta):
 	position.x -= speed * delta
-
 func _set_speed(new_speed:float):
 	speed = new_speed
 	
