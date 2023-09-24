@@ -2,6 +2,4 @@ res://Scenes/Sample Scene.tscn
 res://Scripts/Icon.gd
 res://Shaders/SmoothPixel.tres
 res://Prefabs/pipes.tscn
-res://Scenes/GroundScroller.gd
-res://Scripts/pipes.gd
 res://Scripts/BackgroundParallaxLayer.gd

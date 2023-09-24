@@ -1,3 +1,10 @@
+Button
+HBoxContainer
+VBoxContainer
+Label
+TextureRect
+Panel
+CanvasLayer
 BackgroundParallaxLayer
 Sprite2D
 Node2D
@@ -10,10 +17,7 @@ GPUParticles2D
 Node
 Camera3D
 Node3D
-Label
 Control
-HBoxContainer
-VBoxContainer
 MarginContainer
 RigidBody2D
 StaticBody2D

@@ -13,6 +13,8 @@ config_version=5
 config/name="First Godot Test"
 run/main_scene="res://Scenes/Sample Scene.tscn"
 config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
+boot_splash/show_image=false
+boot_splash/image="res://Sprites/pipe.png"
 config/icon="res://Sprites/bird.png"
 
 [autoload]

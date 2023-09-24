@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dkeis8soqxpeh"]
+[gd_scene load_steps=35 format=3 uid="uid://dkeis8soqxpeh"]
 
 [ext_resource type="Script" path="res://Scripts/Score.gd" id="1_6mshp"]
 [ext_resource type="Script" path="res://Scripts/Mr Flap.gd" id="1_t8byd"]
@@ -14,9 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://jylwkt3rab86" path="res://Sprites/mrflap-bg-2.png" id="11_sckd7"]
 [ext_resource type="Texture2D" uid="uid://bf0ffqy1jgsti" path="res://Sprites/mrflap-bg-0.png" id="11_vruw5"]
 [ext_resource type="Texture2D" uid="uid://br2bpvw5p8jnb" path="res://Sprites/mrflap-bg-3.png" id="12_kdvwk"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_akevw"]
-font_size = 20
+[ext_resource type="Texture2D" uid="uid://dyeg4nk21jfs2" path="res://Sprites/score_back.png" id="15_t0vk5"]
+[ext_resource type="Texture2D" uid="uid://plncybra74vv" path="res://Sprites/exit-Mrflap1.png" id="16_e2an7"]
+[ext_resource type="Texture2D" uid="uid://dc1h27jcjtxsp" path="res://Sprites/exit-Mrflap2.png" id="17_q0dg5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8odc5"]
 shader = ExtResource("3_duk4e")
@@ -81,36 +81,27 @@ sources/0 = SubResource("TileSetAtlasSource_eya5n")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v67im"]
 size = Vector2(638, 32)
 
+[sub_resource type="LabelSettings" id="LabelSettings_1n7d6"]
+font_size = 32
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qnfsr"]
+font_size = 30
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oi626"]
+font_size = 20
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0gv5s"]
+font_size = 20
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node 2D" type="Node2D"]
-
-[node name="Control" type="Control" parent="."]
-z_index = 1
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -952.0
-offset_top = -536.0
-offset_right = 952.0
-offset_bottom = 488.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Score" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -67.0
-offset_top = 376.0
-offset_right = 67.0
-offset_bottom = 448.0
-grow_horizontal = 2
-text = "Score"
-label_settings = SubResource("LabelSettings_akevw")
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("1_6mshp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.175, 1.175)
@@ -145,7 +136,7 @@ script = ExtResource("4_qaupv")
 position = Vector2(312, 0)
 script = ExtResource("5_og7wa")
 spawn_frequencey = 1.5
-spawn_frequencey_final = 0.85
+spawn_frequencey_final = 0.5
 spawn_frequencey_dwindle = 0.003
 
 [node name="p1" type="Node2D" parent="Pipe Spawner"]
@@ -162,124 +153,124 @@ script = ExtResource("5_7cp3p")
 position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_vnj1m")
 
-[node name="Ground_Scroller" type="Node2D" parent="."]
+[node name="Parallax" type="Node2D" parent="."]
 
-[node name="sky" type="Node2D" parent="Ground_Scroller" node_paths=PackedStringArray("parts")]
+[node name="sky" type="Node2D" parent="Parallax" node_paths=PackedStringArray("parts")]
 script = ExtResource("9_dkvaq")
 parts = [NodePath("sky"), NodePath("sky2"), NodePath("sky3")]
 scroll_speed = 5.0
-min = -639.0
-max = 639.0
+min_rng = -639.0
+max_rng = 639.0
 
-[node name="sky" type="Sprite2D" parent="Ground_Scroller/sky"]
+[node name="sky" type="Sprite2D" parent="Parallax/sky"]
 z_index = -5
 texture_filter = 2
 material = SubResource("ShaderMaterial_6wuxb")
 texture = ExtResource("11_vruw5")
 
-[node name="sky2" type="Sprite2D" parent="Ground_Scroller/sky"]
+[node name="sky2" type="Sprite2D" parent="Parallax/sky"]
 z_index = -5
 texture_filter = 2
 material = SubResource("ShaderMaterial_6wuxb")
 position = Vector2(640, 0)
 texture = ExtResource("11_vruw5")
 
-[node name="sky3" type="Sprite2D" parent="Ground_Scroller/sky"]
+[node name="sky3" type="Sprite2D" parent="Parallax/sky"]
 z_index = -5
 texture_filter = 2
 material = SubResource("ShaderMaterial_6wuxb")
 position = Vector2(-639, 0)
 texture = ExtResource("11_vruw5")
 
-[node name="Pink Mountain" type="Node2D" parent="Ground_Scroller" node_paths=PackedStringArray("parts")]
+[node name="Pink Mountain" type="Node2D" parent="Parallax" node_paths=PackedStringArray("parts")]
 script = ExtResource("9_dkvaq")
 parts = [NodePath("pink mountain"), NodePath("pink mountain2"), NodePath("pink mountain3")]
 scroll_speed = 50.0
-min = -639.0
-max = 639.0
+min_rng = -639.0
+max_rng = 639.0
 
-[node name="pink mountain" type="Sprite2D" parent="Ground_Scroller/Pink Mountain"]
+[node name="pink mountain" type="Sprite2D" parent="Parallax/Pink Mountain"]
 z_index = -4
 texture_filter = 2
 material = SubResource("ShaderMaterial_6wuxb")
 texture = ExtResource("10_v1tq5")
 
-[node name="pink mountain2" type="Sprite2D" parent="Ground_Scroller/Pink Mountain"]
+[node name="pink mountain2" type="Sprite2D" parent="Parallax/Pink Mountain"]
 z_index = -4
 texture_filter = 2
 material = SubResource("ShaderMaterial_6wuxb")
 position = Vector2(639, 0)
 texture = ExtResource("10_v1tq5")
 
-[node name="pink mountain3" type="Sprite2D" parent="Ground_Scroller/Pink Mountain"]
+[node name="pink mountain3" type="Sprite2D" parent="Parallax/Pink Mountain"]
 z_index = -4
 texture_filter = 2
 material = SubResource("ShaderMaterial_6wuxb")
 position = Vector2(-639, 0)
 texture = ExtResource("10_v1tq5")
 
-[node name="Purple Mountain" type="Node2D" parent="Ground_Scroller" node_paths=PackedStringArray("parts")]
+[node name="Purple Mountain" type="Node2D" parent="Parallax" node_paths=PackedStringArray("parts")]
 script = ExtResource("9_dkvaq")
 parts = [NodePath("purple mountain"), NodePath("purple mountain2"), NodePath("purple mountain3")]
 scroll_speed = 100.0
-min = -639.0
-max = 639.0
+min_rng = -639.0
+max_rng = 639.0
 
-[node name="purple mountain" type="Sprite2D" parent="Ground_Scroller/Purple Mountain"]
+[node name="purple mountain" type="Sprite2D" parent="Parallax/Purple Mountain"]
 z_index = -3
 texture_filter = 2
 material = SubResource("ShaderMaterial_6wuxb")
 texture = ExtResource("11_sckd7")
 
-[node name="purple mountain2" type="Sprite2D" parent="Ground_Scroller/Purple Mountain"]
+[node name="purple mountain2" type="Sprite2D" parent="Parallax/Purple Mountain"]
 z_index = -3
 texture_filter = 2
 material = SubResource("ShaderMaterial_6wuxb")
 position = Vector2(639, 0)
 texture = ExtResource("11_sckd7")
 
-[node name="purple mountain3" type="Sprite2D" parent="Ground_Scroller/Purple Mountain"]
+[node name="purple mountain3" type="Sprite2D" parent="Parallax/Purple Mountain"]
 z_index = -3
 texture_filter = 2
 material = SubResource("ShaderMaterial_6wuxb")
 position = Vector2(-639, 0)
 texture = ExtResource("11_sckd7")
 
-[node name="Grass" type="Node2D" parent="Ground_Scroller" node_paths=PackedStringArray("parts")]
+[node name="Grass" type="Node2D" parent="Parallax" node_paths=PackedStringArray("parts")]
 position = Vector2(0, -22)
 script = ExtResource("9_dkvaq")
 parts = [NodePath("grass"), NodePath("grass1"), NodePath("grass2")]
 scroll_speed = 250.0
-min = -639.0
-max = 639.0
+min_rng = -639.0
+max_rng = 639.0
 
-[node name="grass" type="Sprite2D" parent="Ground_Scroller/Grass"]
+[node name="grass" type="Sprite2D" parent="Parallax/Grass"]
 z_index = 1
 texture_filter = 2
 material = SubResource("ShaderMaterial_6wuxb")
 texture = ExtResource("12_kdvwk")
 
-[node name="grass1" type="Sprite2D" parent="Ground_Scroller/Grass"]
+[node name="grass1" type="Sprite2D" parent="Parallax/Grass"]
 z_index = 1
 texture_filter = 2
 material = SubResource("ShaderMaterial_6wuxb")
 position = Vector2(639, 0)
 texture = ExtResource("12_kdvwk")
 
-[node name="grass2" type="Sprite2D" parent="Ground_Scroller/Grass"]
+[node name="grass2" type="Sprite2D" parent="Parallax/Grass"]
 z_index = 1
 texture_filter = 2
 material = SubResource("ShaderMaterial_6wuxb")
 position = Vector2(-639, 0)
 texture = ExtResource("12_kdvwk")
 
-[node name="Ground" type="Node2D" parent="Ground_Scroller" node_paths=PackedStringArray("parts")]
+[node name="Ground" type="Node2D" parent="Parallax" node_paths=PackedStringArray("parts")]
 script = ExtResource("9_dkvaq")
 parts = [NodePath("Grass"), NodePath("Grass2"), NodePath("Grass3")]
-min = -639.0
-max = 639.0
+min_rng = -639.0
+max_rng = 639.0
 
-[node name="Grass" type="TileMap" parent="Ground_Scroller/Ground"]
+[node name="Grass" type="TileMap" parent="Parallax/Ground"]
 texture_filter = 2
 material = SubResource("ShaderMaterial_4bjj0")
 tile_set = SubResource("TileSet_4v0a5")
@@ -287,14 +278,14 @@ cell_quadrant_size = 32
 format = 2
 layer_0/tile_data = PackedInt32Array(327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 327670, 0, 0, 262153, 0, 0, 393206, 65536, 0, 393207, 65536, 0, 393208, 65536, 0, 393209, 65536, 0, 393210, 65536, 0, 393211, 65536, 0, 393212, 65536, 0, 393213, 65536, 0, 393214, 65536, 0, 393215, 65536, 0, 327680, 65536, 0, 327681, 65536, 0, 327682, 65536, 0, 327683, 65536, 0, 327684, 65536, 0, 327685, 65536, 0, 327686, 65536, 0, 327687, 65536, 0, 327688, 65536, 0, 327689, 65536, 0)
 
-[node name="GroundHit" type="Area2D" parent="Ground_Scroller/Ground/Grass"]
+[node name="GroundHit" type="Area2D" parent="Parallax/Ground/Grass"]
 script = ExtResource("10_paxr7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_Scroller/Ground/Grass/GroundHit"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parallax/Ground/Grass/GroundHit"]
 position = Vector2(0, 144)
 shape = SubResource("RectangleShape2D_v67im")
 
-[node name="Grass2" type="TileMap" parent="Ground_Scroller/Ground"]
+[node name="Grass2" type="TileMap" parent="Parallax/Ground"]
 texture_filter = 2
 material = SubResource("ShaderMaterial_4bjj0")
 position = Vector2(639, 0)
@@ -303,14 +294,14 @@ cell_quadrant_size = 32
 format = 2
 layer_0/tile_data = PackedInt32Array(327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 327670, 0, 0, 262153, 0, 0, 393206, 65536, 0, 393207, 65536, 0, 393208, 65536, 0, 393209, 65536, 0, 393210, 65536, 0, 393211, 65536, 0, 393212, 65536, 0, 393213, 65536, 0, 393214, 65536, 0, 393215, 65536, 0, 327680, 65536, 0, 327681, 65536, 0, 327682, 65536, 0, 327683, 65536, 0, 327684, 65536, 0, 327685, 65536, 0, 327686, 65536, 0, 327687, 65536, 0, 327688, 65536, 0, 327689, 65536, 0)
 
-[node name="GroundHit" type="Area2D" parent="Ground_Scroller/Ground/Grass2"]
+[node name="GroundHit" type="Area2D" parent="Parallax/Ground/Grass2"]
 script = ExtResource("10_paxr7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_Scroller/Ground/Grass2/GroundHit"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parallax/Ground/Grass2/GroundHit"]
 position = Vector2(0, 144)
 shape = SubResource("RectangleShape2D_v67im")
 
-[node name="Grass3" type="TileMap" parent="Ground_Scroller/Ground"]
+[node name="Grass3" type="TileMap" parent="Parallax/Ground"]
 texture_filter = 2
 material = SubResource("ShaderMaterial_4bjj0")
 position = Vector2(-639, 0)
@@ -319,14 +310,101 @@ cell_quadrant_size = 32
 format = 2
 layer_0/tile_data = PackedInt32Array(327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 327670, 0, 0, 262153, 0, 0, 393206, 65536, 0, 393207, 65536, 0, 393208, 65536, 0, 393209, 65536, 0, 393210, 65536, 0, 393211, 65536, 0, 393212, 65536, 0, 393213, 65536, 0, 393214, 65536, 0, 393215, 65536, 0, 327680, 65536, 0, 327681, 65536, 0, 327682, 65536, 0, 327683, 65536, 0, 327684, 65536, 0, 327685, 65536, 0, 327686, 65536, 0, 327687, 65536, 0, 327688, 65536, 0, 327689, 65536, 0)
 
-[node name="GroundHit" type="Area2D" parent="Ground_Scroller/Ground/Grass3"]
+[node name="GroundHit" type="Area2D" parent="Parallax/Ground/Grass3"]
 script = ExtResource("10_paxr7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_Scroller/Ground/Grass3/GroundHit"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parallax/Ground/Grass3/GroundHit"]
 position = Vector2(0, 144)
 shape = SubResource("RectangleShape2D_v67im")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0
+"
+label_settings = SubResource("LabelSettings_1n7d6")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_6mshp")
+
+[node name="Death Screen" type="HBoxContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -16.0
+offset_right = 32.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Death Screen"]
+layout_mode = 2
+texture = ExtResource("15_t0vk5")
+
+[node name="VBoxContainter" type="VBoxContainer" parent="CanvasLayer/Death Screen/TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.0
+offset_top = 26.0
+offset_right = 37.0
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Death Screen/TextureRect/VBoxContainter"]
+layout_mode = 2
+text = "You Died!"
+label_settings = SubResource("LabelSettings_qnfsr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/Death Screen/TextureRect/VBoxContainter"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_oi626")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/Death Screen/TextureRect/VBoxContainter"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "High Score: 0"
+label_settings = SubResource("LabelSettings_0gv5s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Death Screen/TextureRect/VBoxContainter"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Death Screen/TextureRect/VBoxContainter/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("16_e2an7")
+flat = true
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="CanvasLayer/Death Screen/TextureRect/VBoxContainter/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("17_q0dg5")
+flat = true
+icon_alignment = 1
+
 [connection signal="area_entered" from="Pipe Despawner" to="Pipe Despawner" method="_on_area_entered"]
-[connection signal="body_entered" from="Ground_Scroller/Ground/Grass/GroundHit" to="Ground_Scroller/Ground/Grass/GroundHit" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground_Scroller/Ground/Grass2/GroundHit" to="Ground_Scroller/Ground/Grass2/GroundHit" method="_on_body_entered"]
-[connection signal="body_entered" from="Ground_Scroller/Ground/Grass3/GroundHit" to="Ground_Scroller/Ground/Grass3/GroundHit" method="_on_body_entered"]
+[connection signal="body_entered" from="Parallax/Ground/Grass/GroundHit" to="Parallax/Ground/Grass/GroundHit" method="_on_body_entered"]
+[connection signal="body_entered" from="Parallax/Ground/Grass2/GroundHit" to="Parallax/Ground/Grass2/GroundHit" method="_on_body_entered"]
+[connection signal="body_entered" from="Parallax/Ground/Grass3/GroundHit" to="Parallax/Ground/Grass3/GroundHit" method="_on_body_entered"]
