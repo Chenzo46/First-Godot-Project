@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbv7a8ydbmwdp"]
+
+[ext_resource type="Texture2D" uid="uid://byq4v5yjhd3vf" path="res://Sprites/bird.png" id="1_diuf0"]
+[ext_resource type="Script" path="res://Scripts/Icon.gd" id="2_vdrma"]
+[ext_resource type="Texture2D" uid="uid://plncybra74vv" path="res://Sprites/exit-Mrflap1.png" id="3_umiop"]
+[ext_resource type="Script" path="res://Scripts/PlayerCamera.gd" id="4_e7bhq"]
+
+[node name="TopDown" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_diuf0")
+script = ExtResource("2_vdrma")
+speed = 200
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(215, -93)
+texture = ExtResource("3_umiop")
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("plr_node")]
+script = ExtResource("4_e7bhq")
+plr_node = NodePath("../Sprite2D")

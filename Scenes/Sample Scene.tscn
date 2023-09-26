@@ -5,7 +5,6 @@
 [ext_resource type="Shader" uid="uid://1bpw84pkqym8" path="res://Shaders/SmoothPixel.tres" id="3_duk4e"]
 [ext_resource type="Script" path="res://Scripts/Game State Manager.gd" id="4_qaupv"]
 [ext_resource type="Texture2D" uid="uid://byq4v5yjhd3vf" path="res://Sprites/bird.png" id="4_vm6mh"]
-[ext_resource type="Script" path="res://Scripts/PipeDespawner.gd" id="5_7cp3p"]
 [ext_resource type="Script" path="res://Scripts/PipeSpawner.gd" id="5_og7wa"]
 [ext_resource type="Texture2D" uid="uid://8yh4io5hqvwa" path="res://Sprites/ground-bird.png" id="9_bi80c"]
 [ext_resource type="Script" path="res://Scripts/BackgroundParallaxLayer.gd" id="9_dkvaq"]
@@ -14,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://jylwkt3rab86" path="res://Sprites/mrflap-bg-2.png" id="11_sckd7"]
 [ext_resource type="Texture2D" uid="uid://bf0ffqy1jgsti" path="res://Sprites/mrflap-bg-0.png" id="11_vruw5"]
 [ext_resource type="Texture2D" uid="uid://br2bpvw5p8jnb" path="res://Sprites/mrflap-bg-3.png" id="12_kdvwk"]
+[ext_resource type="Script" path="res://Scripts/Death Screen.gd" id="15_k64q2"]
 [ext_resource type="Texture2D" uid="uid://dyeg4nk21jfs2" path="res://Sprites/score_back.png" id="15_t0vk5"]
 [ext_resource type="Texture2D" uid="uid://plncybra74vv" path="res://Sprites/exit-Mrflap1.png" id="16_e2an7"]
 [ext_resource type="Texture2D" uid="uid://dc1h27jcjtxsp" path="res://Sprites/exit-Mrflap2.png" id="17_q0dg5"]
@@ -145,9 +145,8 @@ position = Vector2(0, -80)
 [node name="p2" type="Node2D" parent="Pipe Spawner"]
 position = Vector2(0, 53)
 
-[node name="Pipe Despawner" type="Area2D" parent="."]
+[node name="Pipe Despawner" type="Area2D" parent="." groups=["despawner"]]
 position = Vector2(-367, 18)
-script = ExtResource("5_7cp3p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe Despawner"]
 position = Vector2(0, -7.5)
@@ -347,6 +346,7 @@ offset_right = 32.0
 offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("15_k64q2")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Death Screen"]
 layout_mode = 2
@@ -404,7 +404,6 @@ icon = ExtResource("17_q0dg5")
 flat = true
 icon_alignment = 1
 
-[connection signal="area_entered" from="Pipe Despawner" to="Pipe Despawner" method="_on_area_entered"]
 [connection signal="body_entered" from="Parallax/Ground/Grass/GroundHit" to="Parallax/Ground/Grass/GroundHit" method="_on_body_entered"]
 [connection signal="body_entered" from="Parallax/Ground/Grass2/GroundHit" to="Parallax/Ground/Grass2/GroundHit" method="_on_body_entered"]
 [connection signal="body_entered" from="Parallax/Ground/Grass3/GroundHit" to="Parallax/Ground/Grass3/GroundHit" method="_on_body_entered"]

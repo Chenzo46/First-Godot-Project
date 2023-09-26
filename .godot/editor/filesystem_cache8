@@ -1,34 +1,37 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1695432135
-export_presets.cfg::TextFile::-1::1695419356::0::1::::<><>::
-::res://Prefabs/::1695432941
-pipes.tscn::PackedScene::6958871299637822034::1695432941::0::1::::<><>::res://Scripts/pipes.gd<>uid://1bpw84pkqym8::::res://Shaders/SmoothPixel.tres<>uid://b3k3sdrapsxkw::::res://Sprites/pipe.png
-top_down_plr.tscn::PackedScene::613755209362904713::1695347837::0::1::::<><>::uid://dg7qx1kvejhb3
-::res://Scenes/::1695432941
-GroundScroller.gd::GDScript::-1::1695415980::0::1::::<>Node2D<>::
-ParallaxScroll.gd::GDScript::-1::1695412569::0::1::::<>ParallaxBackground<>::
-Sample Scene.tscn::PackedScene::7869927640443718979::1695432941::0::1::::<><>::res://Scripts/Score.gd<>res://Scripts/Mr Flap.gd<>uid://1bpw84pkqym8::::res://Shaders/SmoothPixel.tres<>res://Scripts/Game State Manager.gd<>uid://byq4v5yjhd3vf::::res://Sprites/bird.png<>res://Scripts/PipeDespawner.gd<>res://Scripts/PipeSpawner.gd<>uid://8yh4io5hqvwa::::res://Sprites/ground-bird.png<>res://Scripts/BackgroundParallaxLayer.gd<>res://Scripts/GroundHit.gd<>uid://citxqr0hw4gjx::::res://Sprites/mrflap-bg-1.png<>uid://jylwkt3rab86::::res://Sprites/mrflap-bg-2.png<>uid://bf0ffqy1jgsti::::res://Sprites/mrflap-bg-0.png<>uid://br2bpvw5p8jnb::::res://Sprites/mrflap-bg-3.png<>uid://dyeg4nk21jfs2::::res://Sprites/score_back.png
-::res://Scripts/::1695429838
-BackgroundParallaxLayer.gd::GDScript::-1::1695416182::0::1::::BackgroundParallaxLayer<>Node2D<>::
-Game State Manager.gd::GDScript::-1::1695244820::0::1::::<>Node2D<>::
-GroundHit.gd::GDScript::-1::1695357580::0::1::::<>Area2D<>::
-Icon.gd::GDScript::-1::1695429838::0::1::::<>Sprite2D<>::
-Mr Flap.gd::GDScript::-1::1695412569::0::1::::<>RigidBody2D<>::
-PipeDespawner.gd::GDScript::-1::1695243160::0::1::::<>Area2D<>::
-pipes.gd::GDScript::-1::1695416343::0::1::::<>Node2D<>::
-PipeSpawner.gd::GDScript::-1::1695352916::0::1::::<>Node2D<>::
-Score.gd::GDScript::-1::1695357439::0::1::::<>Label<>::
-::res://Shaders/::1695432941
-SmoothPixel.tres::Shader::1827926133465741017::1695432941::0::1::::<><>::
-::res://Sprites/::1695433920
-bird.png::CompressedTexture2D::4105782882727299431::1695347851::1695348169::1::::<><>::
-exit-Mrflap1.png::CompressedTexture2D::1076334965237819187::1695433920::1695433920::1::::<><>::
-exit-Mrflap2.png::CompressedTexture2D::7353788490099835767::1695433920::1695433920::1::::<><>::
-ground-bird.png::CompressedTexture2D::2366254156312244464::1695347856::1695347856::1::::<><>::
-icon.svg::CompressedTexture2D::7647469128196485378::1695155941::1695347837::1::::<><>::
-mrflap-bg-0.png::CompressedTexture2D::2789287738310627798::1695416694::1695416701::1::::<><>::
-mrflap-bg-1.png::CompressedTexture2D::5375001289219361225::1695416694::1695416701::1::::<><>::
-mrflap-bg-2.png::CompressedTexture2D::681952389105762133::1695416694::1695416701::1::::<><>::
-mrflap-bg-3.png::CompressedTexture2D::3635457867161071255::1695416694::1695416701::1::::<><>::
-pipe.png::CompressedTexture2D::4374084487038859654::1695347861::1695347861::1::::<><>::
-score_back.png::CompressedTexture2D::8852468598901617627::1695432233::1695432233::1::::<><>::
+::res://::1695658828
+export_presets.cfg::TextFile::-1::1695419460::0::1::::<><>::
+GroundScroller.gd::GDScript::-1::1695419460::0::1::::<>Node2D<>::
+::res://Prefabs/::1695658755
+pipes.tscn::PackedScene::6958871299637822034::1695658755::0::1::::<><>::res://Scripts/pipes.gd<>uid://1bpw84pkqym8::::res://Shaders/SmoothPixel.tres<>uid://b3k3sdrapsxkw::::res://Sprites/pipe.png
+top_down_plr.tscn::PackedScene::613755209362904713::1695351870::0::1::::<><>::uid://dg7qx1kvejhb3
+::res://Scenes/::1695658828
+ParallaxScroll.gd::GDScript::-1::1695403368::0::1::::<>ParallaxBackground<>::
+Sample Scene.tscn::PackedScene::7869927640443718979::1695658783::0::1::::<><>::res://Scripts/Score.gd<>res://Scripts/Mr Flap.gd<>uid://1bpw84pkqym8::::res://Shaders/SmoothPixel.tres<>res://Scripts/Game State Manager.gd<>uid://byq4v5yjhd3vf::::res://Sprites/bird.png<>res://Scripts/PipeDespawner.gd<>res://Scripts/PipeSpawner.gd<>uid://8yh4io5hqvwa::::res://Sprites/ground-bird.png<>res://Scripts/BackgroundParallaxLayer.gd<>res://Scripts/GroundHit.gd<>uid://citxqr0hw4gjx::::res://Sprites/mrflap-bg-1.png<>uid://jylwkt3rab86::::res://Sprites/mrflap-bg-2.png<>uid://bf0ffqy1jgsti::::res://Sprites/mrflap-bg-0.png<>uid://br2bpvw5p8jnb::::res://Sprites/mrflap-bg-3.png<>res://Scripts/Death Screen.gd<>uid://dyeg4nk21jfs2::::res://Sprites/score_back.png<>uid://plncybra74vv::::res://Sprites/exit-Mrflap1.png<>uid://dc1h27jcjtxsp::::res://Sprites/exit-Mrflap2.png
+TopDown.tscn::PackedScene::7274747541805118237::1695658755::0::1::::<><>::uid://byq4v5yjhd3vf::::res://Sprites/bird.png<>res://Scripts/Icon.gd<>uid://plncybra74vv::::res://Sprites/exit-Mrflap1.png<>res://Scripts/PlayerCamera.gd
+::res://Scripts/::1695658783
+BackgroundParallaxLayer.gd::GDScript::-1::1695595171::0::1::::BackgroundParallaxLayer<>Node2D<>::
+Death Screen.gd::GDScript::-1::1695658783::0::1::::<>HBoxContainer<>::
+Game State Manager.gd::GDScript::-1::1695658026::0::1::::<>Node2D<>::
+GroundHit.gd::GDScript::-1::1695396018::0::1::::<>Area2D<>::
+Icon.gd::GDScript::-1::1695654962::0::1::::<>Sprite2D<>::
+Mr Flap.gd::GDScript::-1::1695400866::0::1::::<>RigidBody2D<>::
+PipeDespawner.gd::GDScript::-1::1695230711::0::1::::<>Area2D<>::
+pipes.gd::GDScript::-1::1695396018::0::1::::<>Node2D<>::
+PipeSpawner.gd::GDScript::-1::1695351870::0::1::::<>Node2D<>::
+PlayerCamera.gd::GDScript::-1::1695656486::0::1::::<>Camera2D<>::
+Score.gd::GDScript::-1::1695312921::0::1::::<>Label<>::
+::res://Shaders/::1695658783
+SmoothPixel.tres::Shader::1827926133465741017::1695658783::0::1::::<><>::
+::res://Sprites/::1695595171
+bird.png::CompressedTexture2D::4105782882727299431::1695351870::1695351870::1::::<><>::
+exit-Mrflap1.png::CompressedTexture2D::1076334965237819187::1695595171::1695595171::1::::<><>::
+exit-Mrflap2.png::CompressedTexture2D::7353788490099835767::1695595171::1695595171::1::::<><>::
+ground-bird.png::CompressedTexture2D::2366254156312244464::1695351870::1695351870::1::::<><>::
+icon.svg::CompressedTexture2D::7647469128196485378::1695351870::1695351870::1::::<><>::
+mrflap-bg-0.png::CompressedTexture2D::2789287738310627798::1695419460::1695419460::1::::<><>::
+mrflap-bg-1.png::CompressedTexture2D::5375001289219361225::1695419460::1695419460::1::::<><>::
+mrflap-bg-2.png::CompressedTexture2D::681952389105762133::1695419460::1695419460::1::::<><>::
+mrflap-bg-3.png::CompressedTexture2D::3635457867161071255::1695419460::1695419460::1::::<><>::
+pipe.png::CompressedTexture2D::4374084487038859654::1695351870::1695351870::1::::<><>::
+score_back.png::CompressedTexture2D::8852468598901617627::1695595171::1695595171::1::::<><>::

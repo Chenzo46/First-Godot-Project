@@ -16,3 +16,9 @@ func _process(delta):
 		c.position.x -= delta * scroll_speed
 		if c.position.x < min_rng:
 			c.position.x = max_rng
+
+func _ready():
+	GameStateManager.game_ended.connect(_stop_parallax)
+
+func _stop_parallax():
+	_set_speed(0)

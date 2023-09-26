@@ -2,4 +2,11 @@ res://Scenes/Sample Scene.tscn
 res://Scripts/Icon.gd
 res://Shaders/SmoothPixel.tres
 res://Prefabs/pipes.tscn
+res://Scenes/TopDown.tscn
+res://Scripts/PlayerCamera.gd
+res://Scripts/Death Screen.gd
+res://Scripts/Game State Manager.gd
 res://Scripts/BackgroundParallaxLayer.gd
+res://Scripts/pipes.gd
+res://Scripts/PipeSpawner.gd
+res://Scripts/Score.gd
