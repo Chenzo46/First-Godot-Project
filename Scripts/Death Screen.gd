@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends Container
 
 func _ready():
 	GameStateManager.game_ended.connect(show_box)

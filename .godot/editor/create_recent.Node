@@ -1,3 +1,5 @@
+Control
+Container
 Sprite2D
 Camera2D
 Button
@@ -18,7 +20,6 @@ GPUParticles2D
 Node
 Camera3D
 Node3D
-Control
 MarginContainer
 RigidBody2D
 StaticBody2D

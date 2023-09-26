@@ -17,16 +17,16 @@ func _process(delta):
 func _set_speed(new_speed:float):
 	speed = new_speed
 	
-func _kill_player(body:Node2D):
+func _kill_player(body:RigidBody2D):
 	if body.is_in_group("Player"):
 		body.end_player()
 		
-func _increase_score(body:Node2D):
+func _increase_score(body:RigidBody2D):
 	if body.is_in_group("Player"):
 		GameStateManager._inc_score()
 
 func _destroy_pipes(area:Area2D):
 	if area.is_in_group("despawner"):
 		get_parent().pipe_instances.erase(self)
-		print("destroyed") 
+		#print("destroyed")
 		queue_free()
