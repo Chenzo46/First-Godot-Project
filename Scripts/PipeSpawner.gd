@@ -44,3 +44,6 @@ func _stop_pipes():
 	plr_dead = true
 	for p in pipe_instances:
 		p._set_speed(0)
+		
+func sum_wow(a:float, b:float):
+	return a+b

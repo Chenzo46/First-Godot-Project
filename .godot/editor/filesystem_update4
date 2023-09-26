@@ -1,7 +1,9 @@
-res://Scenes/Sample Scene.tscn
+res://Scenes/TopDown.tscn
 res://Scripts/Icon.gd
 res://Shaders/SmoothPixel.tres
+res://Scripts/PipeSpawner.gd
+res://Scenes/Sample Scene.tscn
 res://Scripts/pipes.gd
-res://Scripts/Mr Flap.gd
 res://UI themes/Button/MainButtonTheme.tres
-res://Scripts/Death Screen.gd
+res://Scripts/Game State Manager.gd
+res://Scenes/GameButtons.gd

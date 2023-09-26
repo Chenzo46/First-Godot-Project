@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dkeis8soqxpeh"]
+[gd_scene load_steps=39 format=3 uid="uid://dkeis8soqxpeh"]
 
 [ext_resource type="Script" path="res://Scripts/Score.gd" id="1_6mshp"]
 [ext_resource type="Script" path="res://Scripts/Mr Flap.gd" id="1_t8byd"]
@@ -15,7 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://br2bpvw5p8jnb" path="res://Sprites/mrflap-bg-3.png" id="12_kdvwk"]
 [ext_resource type="Script" path="res://Scripts/Death Screen.gd" id="15_k64q2"]
 [ext_resource type="Texture2D" uid="uid://dyeg4nk21jfs2" path="res://Sprites/score_back.png" id="15_t0vk5"]
+[ext_resource type="Script" path="res://Scenes/GameButtons.gd" id="16_7a07l"]
 [ext_resource type="Theme" uid="uid://dsny50m6cto7g" path="res://UI themes/Button/MainButtonTheme.tres" id="16_mae7n"]
+[ext_resource type="Texture2D" uid="uid://plncybra74vv" path="res://Sprites/exit-Mrflap1.png" id="17_0bbdy"]
 [ext_resource type="Texture2D" uid="uid://dc1h27jcjtxsp" path="res://Sprites/exit-Mrflap2.png" id="17_q0dg5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8odc5"]
@@ -101,9 +103,11 @@ font_size = 20
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q3bvg"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ku02u"]
+texture = ExtResource("17_0bbdy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g8bf4"]
 texture = ExtResource("17_q0dg5")
-region_rect = Rect2(0, 0, 50, 45)
 
 [node name="Node 2D" type="Node2D"]
 
@@ -323,6 +327,7 @@ shape = SubResource("RectangleShape2D_v67im")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
+layout_direction = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -347,16 +352,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_6mshp")
 
-[node name="Death Screen" type="Container" parent="CanvasLayer/Control"]
+[node name="Death Screen" type="BoxContainer" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 script = ExtResource("15_k64q2")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Death Screen"]
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -399,19 +407,25 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Death Screen/TextureRect/VBoxContainter"]
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 alignment = 1
+script = ExtResource("16_7a07l")
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/Death Screen/TextureRect/VBoxContainter/HBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 theme = ExtResource("16_mae7n")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ku02u")
+icon = ExtResource("17_0bbdy")
+flat = true
 icon_alignment = 1
 
 [node name="Button2" type="Button" parent="CanvasLayer/Control/Death Screen/TextureRect/VBoxContainter/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("16_mae7n")
-theme_override_styles/normal = SubResource("StyleBoxTexture_q3bvg")
+theme_override_styles/normal = SubResource("StyleBoxTexture_g8bf4")
+icon = ExtResource("17_q0dg5")
+flat = true
 icon_alignment = 1
 
 [connection signal="body_entered" from="Parallax/Ground/Grass/GroundHit" to="Parallax/Ground/Grass/GroundHit" method="_on_body_entered"]
