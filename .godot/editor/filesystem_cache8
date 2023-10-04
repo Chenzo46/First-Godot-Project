@@ -1,28 +1,29 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1695743524
+::res://::1695918373
 export_presets.cfg::TextFile::-1::1695736093::0::1::::<><>::
 GroundScroller.gd::GDScript::-1::1695419460::0::1::::<>Node2D<>::
 ::res://Prefabs/::1695660023
-pipes.tscn::PackedScene::6958871299637822034::1695660023::0::1::::<><>::res://Scripts/pipes.gd<>uid://1bpw84pkqym8::::res://Shaders/SmoothPixel.tres<>uid://b3k3sdrapsxkw::::res://Sprites/pipe.png
-top_down_plr.tscn::PackedScene::613755209362904713::1695351870::0::1::::<><>::uid://dg7qx1kvejhb3::::res://Sprites/icon.svg<>res://Scripts/Icon.gd
-::res://Scenes/::1695736093
-Sample Scene.tscn::PackedScene::7869927640443718979::1695736093::0::1::::<><>::res://Scripts/Score.gd<>res://Scripts/Mr Flap.gd<>uid://1bpw84pkqym8::::res://Shaders/SmoothPixel.tres<>res://Scripts/Game State Manager.gd<>uid://byq4v5yjhd3vf::::res://Sprites/bird.png<>res://Scripts/PipeSpawner.gd<>uid://8yh4io5hqvwa::::res://Sprites/ground-bird.png<>res://Scripts/BackgroundParallaxLayer.gd<>res://Scripts/GroundHit.gd<>uid://citxqr0hw4gjx::::res://Sprites/mrflap-bg-1.png<>uid://jylwkt3rab86::::res://Sprites/mrflap-bg-2.png<>uid://bf0ffqy1jgsti::::res://Sprites/mrflap-bg-0.png<>uid://br2bpvw5p8jnb::::res://Sprites/mrflap-bg-3.png<>res://Scripts/Death Screen.gd<>uid://dyeg4nk21jfs2::::res://Sprites/score_back.png<>uid://dsny50m6cto7g::::res://UI themes/Button/MainButtonTheme.tres<>uid://dc1h27jcjtxsp::::res://Sprites/exit-Mrflap2.png
-TopDown.tscn::PackedScene::7274747541805118237::1695660140::0::1::::<><>::uid://byq4v5yjhd3vf::::res://Sprites/bird.png<>res://Scripts/Icon.gd<>uid://plncybra74vv::::res://Sprites/exit-Mrflap1.png<>res://Scripts/PlayerCamera.gd
-::res://Scripts/::1695736093
+pipes.tscn::PackedScene::6958871299637822034::1695660023::0::1::::<><>::res://Scripts/pipes.gd<>uid://1bpw84pkqym8
+top_down_plr.tscn::PackedScene::613755209362904713::1695351870::0::1::::<><>::uid://dg7qx1kvejhb3
+::res://Scenes/::1695746450
+GameButtons.gd::GDScript::-1::1695746425::0::1::::<>HBoxContainer<>::
+Sample Scene.tscn::PackedScene::7869927640443718979::1695746450::0::1::::<><>::res://Scripts/Score.gd<>res://Scripts/Mr Flap.gd<>uid://1bpw84pkqym8::::res://Shaders/SmoothPixel.tres<>res://Scripts/Game State Manager.gd<>uid://byq4v5yjhd3vf::::res://Sprites/bird.png<>res://Scripts/PipeSpawner.gd<>uid://8yh4io5hqvwa::::res://Sprites/ground-bird.png<>res://Scripts/BackgroundParallaxLayer.gd<>res://Scripts/GroundHit.gd<>uid://citxqr0hw4gjx::::res://Sprites/mrflap-bg-1.png<>uid://jylwkt3rab86::::res://Sprites/mrflap-bg-2.png<>uid://bf0ffqy1jgsti::::res://Sprites/mrflap-bg-0.png<>uid://br2bpvw5p8jnb::::res://Sprites/mrflap-bg-3.png<>res://Scripts/Death Screen.gd<>uid://dyeg4nk21jfs2::::res://Sprites/score_back.png<>res://Scenes/GameButtons.gd<>uid://dsny50m6cto7g::::res://UI themes/Button/MainButtonTheme.tres<>uid://plncybra74vv::::res://Sprites/exit-Mrflap1.png<>uid://dc1h27jcjtxsp::::res://Sprites/exit-Mrflap2.png
+TopDown.tscn::PackedScene::7274747541805118237::1695746450::0::1::::<><>::uid://byq4v5yjhd3vf::::res://Sprites/bird.png<>res://Scripts/Icon.gd<>uid://plncybra74vv::::res://Sprites/exit-Mrflap1.png<>res://Scripts/PlayerCamera.gd
+::res://Scripts/::1695762523
 BackgroundParallaxLayer.gd::GDScript::-1::1695658909::0::1::::BackgroundParallaxLayer<>Node2D<>::
-Death Screen.gd::GDScript::-1::1695736093::0::1::::<>Container<>::
-Game State Manager.gd::GDScript::-1::1695658026::0::1::::<>Node2D<>::
+Death Screen.gd::GDScript::-1::1695762523::0::1::::<>Container<>::
+Game State Manager.gd::GDScript::-1::1695746425::0::1::::<>Node2D<>::
 GroundHit.gd::GDScript::-1::1695396018::0::1::::<>Area2D<>::
-Icon.gd::GDScript::-1::1695654962::0::1::::<>Sprite2D<>::
+Icon.gd::GDScript::-1::1695743727::0::1::::<>Sprite2D<>::
 Mr Flap.gd::GDScript::-1::1695736093::0::1::::<>RigidBody2D<>::
 ParallaxScroll.gd::GDScript::-1::1695403368::0::1::::<>ParallaxBackground<>::
 PipeDespawner.gd::GDScript::-1::1695230711::0::1::::<>Area2D<>::
-pipes.gd::GDScript::-1::1695736093::0::1::::<>Node2D<>::
-PipeSpawner.gd::GDScript::-1::1695660418::0::1::::<>Node2D<>::
+pipes.gd::GDScript::-1::1695745126::0::1::::<>Node2D<>::
+PipeSpawner.gd::GDScript::-1::1695743783::0::1::::<>Node2D<>::
 PlayerCamera.gd::GDScript::-1::1695656486::0::1::::<>Camera2D<>::
 Score.gd::GDScript::-1::1695660585::0::1::::<>Label<>::
-::res://Shaders/::1695736114
-SmoothPixel.tres::Shader::1827926133465741017::1695736114::0::1::::<><>::
+::res://Shaders/::1695762523
+SmoothPixel.tres::Shader::1827926133465741017::1695762523::0::1::::<><>::
 ::res://Sprites/::1695595171
 bird.png::CompressedTexture2D::4105782882727299431::1695351870::1695351870::1::::<><>::
 exit-Mrflap1.png::CompressedTexture2D::1076334965237819187::1695595171::1695595171::1::::<><>::
@@ -36,5 +37,5 @@ mrflap-bg-3.png::CompressedTexture2D::3635457867161071255::1695419460::169541946
 pipe.png::CompressedTexture2D::4374084487038859654::1695351870::1695351870::1::::<><>::
 score_back.png::CompressedTexture2D::8852468598901617627::1695595171::1695595171::1::::<><>::
 ::res://UI themes/::1695736093
-::res://UI themes/Button/::1695736093
-MainButtonTheme.tres::Theme::8451010262043546646::1695736093::0::1::::<><>::
+::res://UI themes/Button/::1695745701
+MainButtonTheme.tres::Theme::8451010262043546646::1695745701::0::1::::<><>::

@@ -1,2 +1,0 @@
-﻿52438
-C:/Users/delig/Godot/Godot-4.1.1-.NET/Godot_v4.1.1-stable_mono_win64.exe
